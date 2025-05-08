@@ -1,0 +1,153 @@
+html {
+	position: relative;
+	background-image: url("img/bg.jpg");
+	background-size: 100%;
+}
+
+/* Fonts */
+p,
+footer,
+td,
+h2 {
+	font-family: 'Montserrat';
+	font-weight: bold;
+	cursor: default;
+}
+
+h2 {
+	text-align: center;
+	font-size: 40px;
+}
+
+.list_area h2 {
+	position: relative;
+	margin: auto;
+	text-align: center;
+	font-size: 20px;
+}
+
+footer a:any-link {
+	color: #222543;
+}
+
+/* Credits text */
+footer {
+	position: fixed;
+	font-size: smaller;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	bottom: 0;
+	text-shadow: #000000ff 0px 0px 10px;
+	color: white;
+}
+
+div.logo_area img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.content_area {
+	padding: 2%;
+	max-width: 70%;
+	background-color: #4F5F794f;
+	border-radius: 12px;
+	margin: auto;
+	box-shadow: #000000c9 0px 0px 50px;
+	border-style: solid;
+	border-color: floralwhite;
+	border-width: 2px;
+}
+
+.slider {
+	position: relative;
+	display: inline-block;
+	background-color: #536079;
+	height: 15px;
+	width: 30px;
+	border: #00000091;
+	border-style: solid;
+	border-radius: 20px;
+	border-width: 1px;
+}
+
+
+/* slider switch thing */
+.slider_switch {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0px;
+	border-radius: 20px;
+	transition: .4s;
+	background-color: #5E6C86;
+	box-shadow: #222543 0px 0px 10px;
+}
+
+.slider_switch:before {
+	position: absolute;
+	content: "";
+	height: 15px;
+	width: 15px;
+	border-radius: 16px;
+	left: 0%;
+	background-color: #ffda84;
+
+	transition: .3s cubic-bezier(.63, .06, .81, .36);
+}
+
+.inv-checkbox:checked+.slider_switch:before {
+	transform: translateX(100%);
+	background-color: #fafafa;
+	box-shadow: #85ff8b 0px 0px 10px;
+}
+
+.inv-checkbox:checked+.slider_switch {
+	background-color: #85ff8b;
+	box-shadow: #85ff8b77 0px 0px 10px;
+}
+
+.inv-checkbox {
+	visibility: hidden;
+}
+
+/* Slider switch thing */
+
+table {
+	position: relative;
+
+	background-color: #4F5F794f;
+	border-radius: 20px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #2020202c;
+	margin: auto;
+	padding: 7px 7px 7px 7px;
+	border-spacing: 0;
+}
+
+td:first-child {
+	padding-right: 350px;
+}
+
+input[type=text] {
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #222543;
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #222543;
+	opacity: 70%;
+}
+
+input[type="button"] {
+	width: 20px;
+	height: 20px;
+	outline: none;
+	border: none;
+	border-radius: 20px;
+
+}

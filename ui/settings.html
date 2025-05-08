@@ -1,0 +1,75 @@
+<html>
+
+<head>
+	<title>Lobster Protect - Settings</title>
+	<link rel="stylesheet" href="settings.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="shortcut icon" href="img/logo64.png" type="image/x-icon">
+</head>
+
+<body>
+	<div class="logo_area">
+		<img src="img/logo128.png">
+	</div>
+	<hr>
+	<div class="content_area">
+		<div class="short_conf_area">
+			<h2>Settings</h2>
+			<table>
+				<tr>
+					<td>Whitelist mode</td>
+					<td>
+						<label class="slider">
+							<input class="inv-checkbox" type="checkbox" id="whitelist-checkbox">
+							<span class="slider_switch"></span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Close browser on trigger</td>
+					<td>
+						<label class="slider">
+							<input class="inv-checkbox" type="checkbox" id="closeont-checkbox">
+							<span class="slider_switch"></span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Debug mode
+						<sup><span style="color:tomato; font-weight: bold; font-size: 10px;"
+								title="Turn this setting on if you want to report a bug.">
+								(?)
+							</span></sup>
+					</td>
+					<td>
+						<label class="slider">
+							<input class="inv-checkbox" type="checkbox" id="dbgmode-checkbox">
+							<span class="slider_switch"></span>
+						</label>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="list_conf_area">
+			<div id="site_prompt">
+				<p style="display: inline-block;">Add hostname:</p>
+				<input type="text" id="addsite-text" placeholder="www.hostname.com">
+				<input type="button" id="addsite-button" value="+">
+			</div>
+
+			<div class="list_area">
+				<h2>Sites</h2>
+				<ul style="list-style-type:none;" id="site_list">
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+
+<footer id="credits">Background render by <a
+		href="https://unsplash.com/@marksans?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mark
+		Sans</a> on <a
+		href="https://unsplash.com/photos/a-group-of-mountains-that-are-in-the-sky-3jj4-HXXa_0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+</footer>
+
+</html>

@@ -1,0 +1,25 @@
+{
+	"manifest_version": 3,
+	"name": "Lobster Protect - Site blocker",
+	"short_name": "LobsterProtect",
+	"description": "An epic site blocker for my gorgeous lobster with all of the features she wants<3",
+	"version": "1.0",
+	"permissions": [
+		"storage",
+		"unlimitedStorage"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"exclude": [
+				"chrome://extensions*"
+			],
+			"js": [
+				"src/content/content.js"
+			],
+			"run_at": "document_start"
+		}
+	]
+}
