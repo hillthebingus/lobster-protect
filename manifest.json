@@ -2,24 +2,27 @@
 	"manifest_version": 3,
 	"name": "Lobster Protect - Site blocker",
 	"short_name": "LobsterProtect",
-	"description": "An epic site blocker for my gorgeous lobster with all of the features she wants<3",
+	"description": "A free and Open-Source site blocker.",
 	"version": "1.0",
 	"permissions": [
 		"storage",
 		"unlimitedStorage"
 	],
+	"icons": {
+		"16": "ui/img/logo64.png",
+		"48": "ui/img/logo128.png",
+		"128": "ui/img/logo512.png"
+	},
 	"content_scripts": [
 		{
 			"matches": [
 				"<all_urls>"
 			],
-			"exclude": [
-				"chrome://extensions*"
-			],
 			"js": [
 				"src/content/content.js"
 			],
-			"run_at": "document_start"
+			"run_at": "document_end"
 		}
-	]
+	],
+	"options_page": "ui/settings.html"
 }
