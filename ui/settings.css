@@ -4,8 +4,8 @@
 html {
 	background: fixed;
 	background-image: url("img/bg.jpg");
-	background-size: 100%;
-	background-position: 0px 0px;
+	background-size: cover;
+	background-position: 0 0px;
 }
 
 /* Fonts */
@@ -148,6 +148,7 @@ div.content_area {
 	border-color: #2020202c;
 	border-spacing: 0 5px;
 	margin: auto;
+	transition: .4s ease-in;
 }
 
 #list_area tr:nth-child(even) {
@@ -258,7 +259,7 @@ input[type=text] {
 .opt_button:hover {
 
 	background-color: #e02e2e;
-	transform: translateY(-3px);
+	transform: translateY(-2px);
 	width: 40px;
 	box-shadow: #0000009a 0px 5px 10px;
 }
@@ -266,7 +267,7 @@ input[type=text] {
 .opt_button:active {
 	box-shadow: #ff9595 0px -2px 8px,
 		inset #ff9595 0px -2px 8px;
-	transform: translateY(3px);
+	transform: translateY(2px);
 }
 
 #site_prompt {

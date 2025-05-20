@@ -6,3 +6,6 @@
 
 # An utility file, used for my lil project management tool. i should probably post it sometime
 *.wkalias
+
+# Stupid thing
+.vscode

@@ -6,12 +6,18 @@
 	"version": "1.0",
 	"permissions": [
 		"storage",
-		"unlimitedStorage"
+		"unlimitedStorage",
+		"tabs",
+		"search"
 	],
 	"icons": {
 		"16": "ui/img/logo64.png",
 		"48": "ui/img/logo128.png",
 		"128": "ui/img/logo512.png"
+	},
+	"background": {
+		"service_worker": "src/service/service-worker.js",
+		"type": "module"
 	},
 	"content_scripts": [
 		{
@@ -21,7 +27,7 @@
 			"js": [
 				"src/content/content.js"
 			],
-			"run_at": "document_end"
+			"run_at": "document_start"
 		}
 	],
 	"options_page": "ui/settings.html"

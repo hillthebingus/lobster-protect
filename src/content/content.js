@@ -1,0 +1,36 @@
+
+// TODO Site list.
+const sites = undefined
+
+function Log(fn, msg) {
+	console.log(`-- LobsterProtect::${fn}()\n\t=>${msg}`, ...arguments)
+}
+
+// Important ports.
+const logs = chrome.runtime.connect({ name: "log" })
+	logs.onMessage.addListener((message) => {
+		console.log(message)
+	})
+
+// The port from which we order the service worker to do things.
+const order = chrome.runtime.connect({ name: "cmd" })
+
+
+// Called only when LobsterProtect is triggered
+function onTrigger() {
+	Log("onTrigger()", "Triggered")
+	// TODO: Actions.
+}
+
+
+// Entry point.
+function main() {
+	Log("main", "Entered")
+	Log("main", "Found hostname:", window.location.hostname)
+	Log("main", "Loaded site list:", site_list)
+
+	if (sites.has(window.location.hostname)) onTrigger()
+}
+
+// Loading the entry point after content loads.
+document.addEventListener("DOMContentLoaded", main())
