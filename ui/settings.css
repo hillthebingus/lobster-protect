@@ -56,10 +56,10 @@ div.logo_area img {
 div.content_area {
 	padding: 2%;
 	max-width: 70%;
-	background-color: #4F5F794f;
+	background-color: #323c4d7e;
 	border-radius: 12px;
 	margin: auto;
-	box-shadow: #000000c9 0px 0px 50px;
+	box-shadow: #000000c9 0px 0px 20px;
 	border-style: solid;
 	border-color: floralwhite;
 	border-width: 2px;
@@ -145,7 +145,7 @@ div.content_area {
 	border-radius: 5px;
 	border-style: solid;
 	border-width: 2px;
-	border-color: #2020202c;
+	border-color: #c2c2c294;
 	border-spacing: 0 5px;
 	margin: auto;
 	transition: .4s ease-in;

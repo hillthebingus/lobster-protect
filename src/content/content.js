@@ -1,6 +1,6 @@
 
 // TODO Site list.
-const sites = undefined
+const {sites} = chrome.storage.local.get({ sites:[]})
 
 function Log(fn, ...msg) {
 	console.log(`-- LobsterProtect::${fn}()\n\t=>`, ...msg)
@@ -14,7 +14,6 @@ const logs = chrome.runtime.connect({ name: "log" })
 
 // The port from which we order the service worker to do things.
 const order = chrome.runtime.connect({ name: "cmd" })
-
 
 // Called only when LobsterProtect is triggered
 function onTrigger() {

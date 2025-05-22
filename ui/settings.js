@@ -6,8 +6,9 @@ function rebuildTable(list_table, set) {
 	}
 
 	/* Iterating over the set, creating a new entry after each one. */
-	set.forEach(entry => {
+	set.forEach((entry) => {
 
+		// Creating the entry
 		let new_entry = list_table.insertRow()
 		let site = new_entry.insertCell()
 		let options = new_entry.insertCell()
@@ -16,6 +17,7 @@ function rebuildTable(list_table, set) {
 		site.textContent = entry
 		new_entry.id = entry
 
+		// Affecting the button_element
 		button_element.setAttribute("type", "button")
 		button_element.setAttribute("value", "-")
 		button_element.setAttribute("class", "opt_button")
@@ -23,19 +25,21 @@ function rebuildTable(list_table, set) {
 
 		/* Adding it to the list. */
 		options.appendChild(button_element)
+
+		// Making the delete button do stuff
 		button_element.addEventListener("click", function (e) {
 			document.getElementById(this.getAttribute("ref")).remove()
+			set.delete(this.getAttribute("ref"))
 		})
-	});
+	})
 
 }
 
 
 // Entry point
 async function main() {
-	let { _sites } = await chrome.storage.local.get("sites")
+	let { _sites } = await chrome.storage.local.get( { sites: [] })
 	let sites = new Set(_sites)
-	console.log(sites)
 
 	// table that shows the site list
 	const tableref = document.getElementById("list_area").getElementsByTagName('tbody')[0]

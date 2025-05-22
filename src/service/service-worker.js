@@ -17,11 +17,12 @@ function onOrder(order) {
 				`Received order from ${order.author}`))
 
 	// I don't know what i'm gonna use this service worker for 
-	// since i'm pretty sure i can call most of the functions 
+	// since i'm pretty sure i can call most of the functions the site blocker has 
 	// from the content script, but it's good to have it here ig
+	// i'll remove it if i don't use it
 }
 
-// - Do not do anything if a connection to that port doesn't exist.
+
 function connectionHandler(port) {
 	console.log("Received connect from: ", port.name)
 
