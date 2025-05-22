@@ -1,12 +1,20 @@
-let log
+let log = undefined
 
-function remoteLog(fn, msg) {
-	log.postMessage(`-- LobsterProtect(service-worker)::${fn}() \n\t=> ${msg}`)
-	console.log(`-- LobsterProtect(service-worker)::${fn}() \n\t=> ${msg}`, ...arguments)
+// Call new to construct a new message for the log port.
+class Message {
+	constructor(author, fn, ...args){
+		this.author = author
+		this.fn = fn
+		this.msg = args
+	}
 }
 
 function onOrder(order) {
-	remoteLog("onOrder", `Received order from ${order.author}`)
+	log
+	.postMessage(new Message(
+				chrome.runtime.id,
+				"onOrder",
+				`Received order from ${order.author}`))
 
 	// I don't know what i'm gonna use this service worker for 
 	// since i'm pretty sure i can call most of the functions 
@@ -24,15 +32,26 @@ function connectionHandler(port) {
 			break;
 		case "cmd":
 			port.onMessage.addListener(onOrder)
-			remoteLog("connectionHandler", "!! Orders port established, any order violating OrderProtocol sent through this port will cause a disconnect.")
 			break;
 		default:
-			remoteLog("connectionHandler", "Invalid port, disconnecting.")
+			log
+			.postMessage(new Message(
+					chrome.runtime.id,
+					"connectionHandler", 
+					"Invalid port, disconnecting."))
 			port.disconnect()
 			break;
 	}
 
-	remoteLog("connectionHandler", `Connection established on ${port.name}.`)
+	if (log === undefined){
+		port.disconnect()
+	}
+
+	log
+	.postMessage(new Message(
+			chrome.runtime.id,
+			"connectionHandler",
+			`Connection established on ${port.name}.`))
 
 	port.onDisconnect.addListener(() => {
 		console.log(`-- Disconnected from port ${port.name}`)

@@ -33,7 +33,6 @@ function rebuildTable(list_table, set) {
 
 // Entry point
 async function main() {
-	// 
 	let { _sites } = await chrome.storage.local.get("sites")
 	let sites = new Set(_sites)
 	console.log(sites)
