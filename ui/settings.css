@@ -8,20 +8,23 @@ html {
 	background-position: 0 0px;
 }
 
-/* Fonts */
+/* text */
 p,
 footer,
 td,
 h2 {
 	font-family: 'Inter';
-	font-weight: bold;
+	font-weight: light;
+	font-size: 16px;
 	cursor: default;
 }
 
 
-h2 {
+.short_conf_area h2 {
+	margin-top: 0px;
+	margin-bottom: 20px;
 	text-align: center;
-	font-size: 40px;
+	font-size: 32px;
 }
 
 .list_area h2 {
@@ -135,7 +138,7 @@ div.content_area {
 }
 
 .short_conf_area td:first-child {
-	padding-right: 350px;
+	padding-right: 420px;
 }
 
 #list_area {

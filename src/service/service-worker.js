@@ -46,6 +46,7 @@ function connectionHandler(port) {
 
 	if (log === undefined){
 		port.disconnect()
+		console.log("Cannot log to notify the connection, so a disconnect was called.")
 	}
 
 	log
