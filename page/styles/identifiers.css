@@ -1,0 +1,130 @@
+/* my hope is that someone will see my awful ui and make a pull request with a better ui so then i can be like yay awesome looking ui no way */
+
+
+/*
+ * Site prompt div
+ * */
+#site_prompt {
+	position: relative;
+	max-width: max-content;
+	margin: auto;
+	margin-top: 15px;
+}
+
+#site_prompt p {
+	margin-bottom: 5px;
+	margin-top: 15px;
+	margin-right: 0px;
+}
+
+
+
+#short_conf_area h2 {
+	margin-top: 0px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 32px;
+}
+
+#list_area h2 {
+	position: relative;
+	margin: auto;
+	text-align: center;
+	font-size: 20px;
+}
+
+#logo_area img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content_area {
+	padding: 2%;
+	max-width: 70%;
+	background-color: #323c4d7e;
+	border-radius: 12px;
+	margin: auto;
+	box-shadow: #000000c9 0px 0px 20px;
+	border-style: solid;
+	border-color: floralwhite;
+	border-width: 2px;
+}
+
+#short_conf_area table {
+	position: relative;
+
+	background-color: #4F5F794f;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #2020202c;
+	margin: auto;
+	padding: 7px 7px 7px 7px;
+	border-spacing: 0 5px;
+}
+
+#short_conf_area td:first-child {
+	padding-right: 420px;
+}
+
+#list_area {
+	position: relative;
+
+	background-color: #4f5f79a4;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #c2c2c294;
+	border-spacing: 0 5px;
+	margin: auto;
+	transition: .4s ease-in;
+}
+
+#list_area tr:nth-child(even) {
+	background-color: #1b1b1b56;
+}
+
+#list_area th:first-child {
+	min-width: 200px;
+}
+
+#list_area th:last-child {
+	min-width: 100px;
+}
+
+#list_area td:first-child {
+	text-align: center;
+}
+
+#list_area td {
+	color: #fff;
+	font-size: smaller;
+}
+
+#list_area td:last-child {
+	text-align: center;
+}
+
+
+#addsite-button {
+	background-color: #3d4380;
+	width: 25px;
+	height: 25px;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	transition: .2s ease-out;
+	color: #ffffff;
+}
+
+#addsite-button:active {
+	background-color: #85ff8b;
+}
+
+#addsite-button:hover {
+	box-shadow: #000000 0px 0px 20px;
+	border-radius: 5px;
+}
+
+

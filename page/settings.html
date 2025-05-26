@@ -4,6 +4,8 @@
 <head>
 	<title>Lobster Protect - Settings</title>
 	<link rel="stylesheet" href="settings.css">
+
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coral+Pixels">
 	<link rel="shortcut icon" href="img/logo64.png" type="image/x-icon">
@@ -29,7 +31,7 @@
 					<td>
 						<label class="slider">
 							<input class="inv-checkbox" type="checkbox" id="whitelist-checkbox">
-							<span class="slider_switch"></span>
+							<span class="switch"></span>
 						</label>
 					</td>
 				</tr>
@@ -46,7 +48,7 @@
 					<td>
 						<label class="slider">
 							<input class="inv-checkbox" type="checkbox" id="closeont-checkbox">
-							<span class="slider_switch"></span>
+							<span class="switch"></span>
 						</label>
 					</td>
 				</tr>
@@ -62,7 +64,7 @@
 					<td>
 						<label class="slider">
 							<input class="inv-checkbox" type="checkbox" id="trigger-happy-checkbox">
-							<span class="slider_switch"></span>
+							<span class="switch"></span>
 						</label>
 					</td>
 				</tr>
@@ -82,13 +84,13 @@
 					<td>
 						<label class="slider">
 							<input class="inv-checkbox" type="checkbox" id="dbgmode-checkbox">
-							<span class="slider_switch"></span>
+							<span class="switch"></span>
 						</label>
 					</td>
 				</tr>
 			</table>
 		</div>
-		<div class="list_conf_area">
+		<div id="list_conf_area">
 			<div id="site_prompt">
 				<p style="text-align: center; font-size: 17px;">Add hostname:</p>
 				<input type="text" id="addsite-text" placeholder="www.hostname.com">

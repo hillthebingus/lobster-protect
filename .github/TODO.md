@@ -6,7 +6,7 @@ Once this list is completed, the project should be released.
 It desperately needs to be updated.
 - [ ] Include more settings
 - [ ] Connect it with the chrome.storage API
-- [ ] Modularize the CSS so it's more maintainable (Seriously, it sucks)
+- [x] Modularize the CSS so it's more maintainable (Seriously, it sucks)
 - [ ] Clean up the settings page's source (worst code ever written)
 - [ ] Make it more pretty and responsive
 

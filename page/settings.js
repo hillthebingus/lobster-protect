@@ -27,7 +27,7 @@ function rebuildTable(list_table, set) {
 		options.appendChild(button_element)
 
 		// Making the delete button do stuff
-		button_element.addEventListener("click", function (e) {
+		button_element.addEventListener("click", function () {
 			document.getElementById(this.getAttribute("ref")).remove()
 			set.delete(this.getAttribute("ref"))
 		})
@@ -45,7 +45,7 @@ async function main() {
 	const tableref = document.getElementById("list_area").getElementsByTagName('tbody')[0]
 	const button = document.getElementById("addsite-button")
 
-	button.addEventListener("click", function (e) {
+	button.addEventListener("click", function () {
 		const sitehostname = document.getElementById("addsite-text").value
 
 		// Input sanitizing

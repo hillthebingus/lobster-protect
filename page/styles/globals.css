@@ -1,0 +1,57 @@
+
+/*
+ * Global elements file, no classes, no ids
+ * */
+
+html {
+	background: fixed;
+	background-image: url("img/bg.jpg");
+	background-size: cover;
+	background-position: 0 0px;
+}
+
+/*
+ * Text thingies
+ * */
+p,
+footer,
+td,
+h2 {
+	font-family: 'Inter';
+	font-weight: light;
+	font-size: 16px;
+	cursor: default;
+}
+
+/* Links */
+a:any-link {
+	color: #010852;
+}
+
+
+/* Credits text */
+footer {
+	position: fixed;
+	font-size: smaller;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	bottom: 0;
+	right: 10px;
+	text-shadow: #000000ff 0px 0px 10px;
+	color: white;
+}
+
+/*
+ * Text inputs
+ * TODO Might move this to a class
+ * */
+input[type=text] {
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #222543;
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #222543;
+	opacity: 20%;
+}
