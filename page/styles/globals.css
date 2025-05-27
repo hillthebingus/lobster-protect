@@ -1,18 +1,22 @@
+/*
+* Global elements file, no classes, no ids, just raw elements
+*/
+
 
 /*
- * Global elements file, no classes, no ids
- * */
-
+* the silly html element
+* */
 html {
 	background: fixed;
-	background-image: url("img/bg.jpg");
+	background-image: url("../../resources/img/bg.jpg");
 	background-size: cover;
 	background-position: 0 0px;
 }
 
 /*
- * Text thingies
- * */
+* Text thingies
+* */
+/*¿reg*/
 p,
 footer,
 td,
@@ -22,14 +26,18 @@ h2 {
 	font-size: 16px;
 	cursor: default;
 }
+/*?reg*/
 
 /* Links */
+/*¿reg*/
 a:any-link {
 	color: #010852;
 }
+/*?reg*/
 
 
 /* Credits text */
+/*¿reg*/
 footer {
 	position: fixed;
 	font-size: smaller;
@@ -40,11 +48,13 @@ footer {
 	text-shadow: #000000ff 0px 0px 10px;
 	color: white;
 }
+/*?reg*/
 
 /*
- * Text inputs
- * TODO Might move this to a class
- * */
+* Text inputs
+* TODO move this to a class
+* */
+/*¿reg*/
 input[type=text] {
 	appearance: none;
 	border: none;
@@ -55,3 +65,4 @@ input[type=text] {
 	color: #222543;
 	opacity: 20%;
 }
+/*?reg*/

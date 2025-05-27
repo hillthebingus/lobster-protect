@@ -22,7 +22,6 @@ function onOrder(order) {
 	// i'll remove it if i don't use it
 }
 
-
 function connectionHandler(port) {
 	console.log("Received connect from: ", port.name)
 

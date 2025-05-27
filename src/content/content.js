@@ -1,6 +1,6 @@
 
 // TODO Site list.
-const {sites} = chrome.storage.local.get({ sites:[]})
+const {sites} = await chrome.storage.local.get({ sites: [] })
 
 function Log(fn, ...msg) {
 	console.log(`-- LobsterProtect::${fn}()\n\t=>`, ...msg)

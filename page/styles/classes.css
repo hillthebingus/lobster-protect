@@ -1,12 +1,9 @@
 
 /* Tooltip container class
- *
- * Use this to create custom tooltips that look pretty.
- */
-.tooltip {
-	position: relative;
-	display: inline-block;
-}
+*
+* Use this to create custom tooltips that look pretty.
+*/
+/*¿reg*/
 
 /* Tooltip text */
 .tooltip {
@@ -37,16 +34,14 @@
 	transform: translateY(-5px);
 	opacity: 1;
 }
+/*?reg*/
 
 /*
- * Slider/Checkbox
- *
- * Fancy button
- * TODO Change the stupid names
- *
- */
-
-
+* Slider/Checkbox
+*
+* Fancy button
+*/
+/*¿reg*/
 .slider {
 	position: relative;
 	display: inline-block;
@@ -60,16 +55,16 @@
 }
 
 
-/* bg of the slider 
- * cuz we can't change the background-color property of the slider class for some reason💔
- * */
-.switch {
+/* bg of the slider
+* cuz we can't change the background-color property of the slider class for some reason💔
+* */
+.switch{
 	position: absolute;
 	cursor: pointer;
 	top: 0;
 	left: 0;
 	right: 0;
-	bottom: 0px;
+	bottom: 0;
 	border-radius: 20px;
 	transition: .4s;
 	background-color: #5E6C86;
@@ -78,23 +73,23 @@
 
 
 /*
- * This is the lil ball
- * */
+* This is the lil ball
+* */
 .switch:before {
 	position: absolute;
 	content: "";
 	height: 20px;
 	width: 20px;
 	border-radius: 16px;
-	left: 0%;
+	left: 0px;
 	background-color: #ffda84;
 
 	transition: .3s ease-out;
 }
 
 /*
- * This detects when to trigger the stupid animation.
- * */
+* This detects when to trigger the stupid animation.
+* */
 .inv-checkbox:checked+.switch:before {
 	transform: translateX(20px);
 	background-color: #fafafa;
@@ -109,13 +104,13 @@
 .inv-checkbox {
 	visibility: hidden;
 }
-
+/*?reg*/
 
 /*
- * Site list delete item button 
- * class
- * */
-
+* Site list delete item button
+* class
+* */
+/*¿reg*/
 .opt_button {
 	width: 20px;
 	height: 20px;
@@ -140,4 +135,4 @@
 		inset #ff9595 0px -2px 8px;
 	transform: translateY(2px);
 }
-
+/*?reg*/

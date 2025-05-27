@@ -5,7 +5,7 @@
 	"name": "Lobster Protect - Site blocker",
 	"short_name": "LobProtect",
 	"description": "A free and Open-Source site blocker.",
-	"version": "1.0",
+	"version": "0.0",
 	"permissions": [
 		"storage",
 		"unlimitedStorage",
