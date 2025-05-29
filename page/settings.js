@@ -1,3 +1,4 @@
+
 function rebuildTable(list_table, set) {
 
 	// Clearing the table.

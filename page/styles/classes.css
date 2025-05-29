@@ -1,0 +1,98 @@
+
+/* TODO figure out a good design for one */
+/* The checkbox design i'm making */
+/*¿reg*/
+
+/*?reg*/
+
+
+/* Wrapper for the main content */
+/*¿reg*/
+.wrapper-center {
+	width: fit-content;
+	text-align: center;
+	
+	margin: auto;
+}
+/*?reg*/
+
+
+/* Navigation bar buttons */
+/*¿reg*/
+
+.navbar-inv-radio
+{
+	display: none;
+}
+
+/* The hitbox of the radio button. */
+.navbar-button
+{
+	position: relative;
+	display: flex;
+	
+	width: fit-content;
+	height: 4rem;
+	
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.navbar-button-bg
+{
+	position: absolute;
+	
+	width: 100;
+	height: 100%;
+	inset: 0;	
+	
+	background-color: hsla(0, 0%, 10%, 1);
+	
+	border-bottom: solid 3px hsla(0, 0%, 10%, 0.7);
+	transition: .4s ease-out;
+}
+
+/* The text */
+.navbar-button-text
+{
+	position: relative;
+	display: block;
+	font-family: "Jost", sans-serif;
+	
+	text-align: center;
+	margin: auto;
+}
+
+/* lil thingieds */
+/* for the leftmost button */
+.navbar-left
+{
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 20px;
+}
+
+/* same thing as above but for the rightmost one */
+.navbar-right
+{
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 20px;
+}
+
+
+/* Icons need to be offset a little because they look a bit */ 
+/* weird if they have text next to them */
+.navbar-icon
+{
+	transform: translateY(0.3rem);
+	display: inline-block
+}
+
+/* how the button looks like when it's selected */
+.navbar-inv-radio:checked + .navbar-button-bg {
+	border-color: whitesmoke;
+	background-color: hsla(0, 0%, 30%, 0.7);
+}
+
+
+/*?reg*/
+

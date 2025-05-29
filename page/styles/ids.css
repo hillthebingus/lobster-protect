@@ -1,0 +1,31 @@
+
+/* Titlecard */
+/*¿reg*/
+#title {
+	position: relative;
+	width: fit-content;
+	
+	font-family: "Playfair Display", serif;
+	font-weight: 400;
+	font-optical-sizing: auto;
+	font-size: 46px;
+	text-align: center;
+	
+	margin: auto;
+	margin-bottom: calc(0.7rem + 2%);
+}
+
+#title::before {
+	content: '';
+	
+	position: absolute;
+	display: inline-block;
+	inset: 100% 0 0 25%;
+	
+	width: 50%;
+	height: 1rem;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	background: linear-gradient(90deg, #ff5100, #ff2e7e);
+}
+/*?reg*/
+

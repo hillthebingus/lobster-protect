@@ -1,0 +1,39 @@
+/* Debug, uncomment thingies */
+
+/* *, */
+/* *::before, */
+/* *::after */ 
+/* { */
+/* 	outline: solid 1px red; */
+/* 	background-color: rgba(255, 0, 0, 0.1); */
+/* } */
+
+html {
+	background-color: #0a0a0a;
+}
+
+h1,
+span,
+div {
+	font-size: large;
+	color: whitesmoke;
+}
+
+section
+{
+	padding: 2rem;
+}
+
+nav
+{
+	position: sticky;
+	top: 0;
+	display: flex;
+	width: fit-content;
+	margin: auto;
+}
+
+input{
+	margin: 0px;
+}
+

@@ -1,5 +1,121 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link
-	</head>
+
+<head>
+	<title>LobsterProtect | Settings</title>
+	
+	<!-- Preconnecting to google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+	<!-- Some fonts from google fonts -->
+	<!--¿reg-->
+	
+		<!-- Playfair -->
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+		
+		<!-- Jost -->
+		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<!--?reg-->
+	
+	<!-- Icons from google fonts -->
+	<!--¿reg-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--?reg-->
+	
+	<!-- Modular stylesheets -->
+	<link rel="stylesheet" href="styles/classes.css">
+	<link rel="stylesheet" href="styles/globals.css">
+	<link rel="stylesheet" href="styles/ids.css">
+	
+</head>
+
+<body>
+	<h1 id="title">Lobster Protect - Settings</h1>
+	<!--¿reg-->
+	<nav>
+		
+		<label class="navbar-button">
+			<input name="navbar" type="radio" class="navbar-inv-radio" checked="true">
+			<span class="navbar-button-bg navbar-left"></span>
+			<span class="navbar-button-text">
+				<span class="material-icons navbar-icon">
+					menu
+				</span> Site list
+			</span>
+		</label>
+		
+		<label class="navbar-button">
+			<input name="navbar" type="radio" class="navbar-inv-radio" >
+			<span class="navbar-button-bg"></span>
+			<span class="navbar-button-text">
+				<span class="material-icons navbar-icon">
+					toggle_on
+				</span> Toggles
+			</span>
+		</label>
+		
+		
+		<label class="navbar-button">
+			<input name="navbar" type="radio" class="navbar-inv-radio">
+			<span class="navbar-button-bg"></span>
+			<span class="navbar-button-text">
+				<span class="material-icons navbar-icon">
+					library_add
+				</span> Advanced
+			</span>
+		</label>
+		
+		<label class="navbar-button">
+			<input name="navbar" type="radio" class="navbar-inv-radio">
+			<span class="navbar-button-bg navbar-right"></span>
+			<span class="navbar-button-text">
+				<span class="material-icons navbar-icon">
+					info
+				</span> About
+			</span>
+		</label>
+	</nav>
+	<!--?reg-->
+	
+	<!-- 
+	The funny swapping area.
+	These divs are all hidden and shown with javascript when the user clicks on the navbar, 
+	so we can display an animation when we change sections 
+	-->
+	<!--¿reg-->
+	<div class="wrapper-center separate-top">
+		<section id="toggles-section">
+			<table id="toggles-table">
+				
+				<!--Whitelist Mode toggle ¿reg-->
+				<tr>
+					
+					<!-- The name of the setting -->
+					<td>
+						<div class="tooltip-container">
+							Whitelist mode
+							<span class="tooltip-text">
+								This is a tooltip.
+							</span>
+						</div>
+					</td>
+					
+					<!-- The toggle button -->
+					<td>
+						<label class="switch-container">
+							<input type="checkbox" class="inv-checkbox">
+							<span class="switch-bg"></span>
+						</label>
+					</td>
+				</tr>
+				<!--?reg-->
+					
+			</table>
+		</section>
+	<!--?reg-->
+	
+	</div>
+</body>
+
 </html>
