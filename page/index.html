@@ -24,14 +24,18 @@
 	<!--?reg-->
 	
 	<!-- Modular stylesheets -->
-	<link rel="stylesheet" href="styles/classes.css">
-	<link rel="stylesheet" href="styles/globals.css">
-	<link rel="stylesheet" href="styles/ids.css">
+	<link rel="stylesheet" href="styles/classes.css"> <!-- Classes for certain items -->
+	<link rel="stylesheet" href="styles/globals.css"> <!-- Styling elements themselves -->
+	<link rel="stylesheet" href="styles/ids.css"> <!-- Unique things that aren't elements. -->
+	
+	<link rel="stylesheet" href="styles/vars.css"> <!-- variables for the previous css files -->
 	
 </head>
 
 <body>
-	<h1 id="title">Lobster Protect - Settings</h1>
+	<h1 id="title">Lobster Protect</h1>
+	
+	<!-- Navigation bar --> 
 	<!--¿reg-->
 	<nav>
 		
@@ -85,37 +89,105 @@
 	-->
 	<!--¿reg-->
 	<div class="wrapper-center separate-top">
-		<section id="toggles-section">
-			<table id="toggles-table">
-				
-				<!--Whitelist Mode toggle ¿reg-->
-				<tr>
-					
-					<!-- The name of the setting -->
-					<td>
-						<div class="tooltip-container">
-							Whitelist mode
-							<span class="tooltip-text">
-								This is a tooltip.
-							</span>
-						</div>
-					</td>
-					
-					<!-- The toggle button -->
-					<td>
-						<label class="switch-container">
-							<input type="checkbox" class="inv-checkbox">
-							<span class="switch-bg"></span>
-						</label>
-					</td>
-				</tr>
-				<!--?reg-->
-					
-			</table>
+		
+		<!-- Site list section -->
+		<!-- ¿reg -->
+		<section id="sitelist-section">
+			
 		</section>
+		<!-- ?reg -->
+		
+		
+		<!-- The toggles section. -->
+		<!-- ¿reg -->
+		<section id="toggles-section">
+			<div id="toggles-section-bg">
+				
+				<table id="toggles-section-table">
+					
+					<!--Whitelist Mode toggle ¿reg-->
+					<tr>
+						
+						<!-- The name of the setting -->
+						<td>
+							<div class="tooltip-container">
+								Whitelist mode
+								<span class="tooltip-text">
+									Any site that isn't on the site list now triggers Lobster Protect.
+								</span>
+							</div>
+						</td>
+						
+						<!-- The toggle button -->
+						<td>
+							<label class="switch-container">
+								<input type="checkbox" class="inv-checkbox">
+								<span class="switch-bg"></span>
+								<span class="switch-border"></span>
+							</label>
+						</td>
+					</tr>
+					<!--?reg-->
+					
+					<!-- Close browser on trigger toggle ¿reg-->
+					<tr>
+						
+						<!-- The name of the setting -->
+						<td>
+							<div class="tooltip-container">
+								Close browser on trigger
+								<span class="tooltip-text">
+									This is a tooltip.
+								</span>
+							</div>
+						</td>
+						
+						<!-- The toggle button -->
+						<td>
+							<label class="switch-container">
+								<input type="checkbox" class="inv-checkbox">
+								<span class="switch-bg"></span>
+								<span class="switch-border"></span>
+							</label>
+						</td>
+					</tr>
+					<!--?reg-->
+					
+					<!-- Debug Mode toggle ¿reg-->
+					<tr>
+						
+						<!-- The name of the setting -->
+						<td>
+							<div class="tooltip-container">
+								Debug mode
+								<span class="tooltip-text">
+									This is a tooltip.
+								</span>
+							</div>
+						</td>
+						
+						<!-- The toggle button -->
+						<td>
+							<label class="switch-container">
+								<input type="checkbox" class="inv-checkbox">
+								<span class="switch-bg"></span>
+								<span class="switch-border"></span>
+							</label>
+						</td>
+					</tr>
+					<!--?reg-->
+					
+				</table>
+			</div>
+		</section>
+		<!--?reg-->
+		
+		
+	</div>
 	<!--?reg-->
 	
-	</div>
+	
+	
 </body>
 
 </html>

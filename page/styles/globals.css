@@ -8,32 +8,31 @@
 /* 	background-color: rgba(255, 0, 0, 0.1); */
 /* } */
 
+/* html */
+/*¿reg*/
 html {
-	background-color: #0a0a0a;
+	background-color: var(--clr-bg);
 }
+/*?reg*/
 
+/* text */
+/*¿reg*/
 h1,
 span,
 div {
 	font-size: large;
 	color: whitesmoke;
 }
+/*?reg*/
 
-section
-{
-	padding: 2rem;
-}
-
+/* Some things for the main page */
+/*¿reg*/
 nav
 {
 	position: sticky;
-	top: 0;
+	top: -10px;
 	display: flex;
 	width: fit-content;
 	margin: auto;
 }
-
-input{
-	margin: 0px;
-}
-
+/*?reg*/

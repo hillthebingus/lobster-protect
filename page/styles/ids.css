@@ -25,7 +25,42 @@
 	width: 50%;
 	height: 1rem;
 	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-	background: linear-gradient(90deg, #ff5100, #ff2e7e);
+	background: linear-gradient(45deg, var(--clr-hl-gradient));
 }
 /*?reg*/
 
+/* The toggles section */
+/*¿reg*/
+#toggles-section-bg
+{
+	position: relative;
+	margin-top: 2rem;
+	background-color: var(--clr-divbg);	
+	
+	border-radius: var(--soft-radius);
+	padding: 2rem;
+}
+
+#toggles-section-table td:first-child
+{
+	padding-right: 30vw;
+}
+
+#toggles-section-bg::before
+{
+	content: '';
+	position: absolute;
+	display: inline-block;
+	inset: 0;
+	
+	border-bottom-right-radius: var(--medium-radius);
+	
+	z-index: 7;
+	
+	width: 80%;
+	height: 5%;
+	
+	background: linear-gradient(45deg, var(--clr-hlhl-gradient));
+}
+
+/*?reg*/
