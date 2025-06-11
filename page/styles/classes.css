@@ -71,6 +71,7 @@
 {
 	position: absolute;
 	display: inline-block;
+	opacity: 0;
 	
 	background: linear-gradient(45deg, var(--clr-hlhl-gradient));
 	margin: auto;
@@ -80,8 +81,8 @@
 	
 	inset: 0;
 	
-	width: 90%;
-	height: 90%;
+	width: 100%;
+	height: 100%;
 	
 	transition: .4s ease-out;
 }
@@ -111,7 +112,8 @@
 
 .inv-checkbox:checked ~ .switch-border
 {
-	transform: scale(1.25, 1.25);
+	opacity: 1;
+	transform: scale(1.3, 1.3);
 }
 
 
@@ -267,4 +269,30 @@
 }
 /*?reg*/
 
+/* Stacking the divs on top of each other. */
+/*¿reg*/
+.inner {
+	position: absolute;
+	inset: 0;
+	
+	transition: .4s ease-in-out;
+}
 
+.outer {
+	position: relative;
+	width: 50vw;
+}
+/*?reg*/
+
+/* pseudo non pseudo classes that trigger the hiding and showing animations. */
+/*¿reg*/
+.content-show {
+	transform: translateX(0px);
+	opacity: 1;
+}
+
+.content-hide {
+	transform: translateX(10vw);
+	opacity: 0;
+}
+/*?reg*/
