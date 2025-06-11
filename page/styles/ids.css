@@ -48,7 +48,7 @@
 
 #toggles-section-table td:first-child
 {
-	padding-right: 30vw;
+	width: 100%;
 }
 
 #toggles-section-bg::before
