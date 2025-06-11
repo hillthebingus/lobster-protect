@@ -9,3 +9,6 @@
 
 # Stupid thing
 .vscode
+
+# vim stuff
+*.swp
