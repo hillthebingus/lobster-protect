@@ -39,7 +39,6 @@
 #toggles-section-bg
 {
 	position: relative;
-	margin-top: 2rem;
 	background-color: var(--clr-divbg);	
 	
 	border-radius: var(--soft-radius);
@@ -62,10 +61,23 @@
 	
 	z-index: 7;
 	
-	width: 80%;
+	width: 45%;
 	height: 5%;
 	
 	background: linear-gradient(45deg, var(--clr-hlhl-gradient));
 }
 
 /*?reg*/
+
+/* site list section */
+/*¿reg*/
+#sitelist-section {
+	width: 100%;
+	height: fit-content;
+	height: 50vh;
+	
+	background-color: var(--clr-divbg);
+	border-radius: var(--soft-radius);
+}
+/*?reg*/
+

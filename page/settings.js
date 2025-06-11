@@ -1,4 +1,7 @@
 
+// rebuildTable(site_list, set)
+// Rebuilds the site list so it matches the set. Trigger this every time the addsite button is pressed.
+//¿reg
 function rebuildTable(list_table, set) {
 	
 	// Clearing the table.
@@ -35,33 +38,34 @@ function rebuildTable(list_table, set) {
 	})
 
 }
+//?reg
 
+function handleAnimationSwitch() {
+
+	let _current_section = document.getElementsByClassName("content-show")[0]
+	
+	_current_section.classList.remove("content-show")
+	_current_section.classList.add("content-hide")
+	
+	document.getElementById(this.getAttribute("ref")).classList.add("content-show")
+	document.getElementById(this.getAttribute("ref")).classList.remove("content-hide")	
+}
 
 // Entry point
+//¿reg
 async function main() {
-	let { _sites } = await chrome.storage.local.get( { sites: [] })
-	let sites = new Set(_sites)
 	
-	// table that shows the site list
-	const tableref = document.getElementById("list_area").getElementsByTagName('tbody')[0]
-	const button = document.getElementById("addsite-button")
+	/* Making the navigation bar functional */
+	const nav_buttons = document.getElementsByClassName("navbar-inv-radio")
+	Array.from(nav_buttons).forEach(
+		(el) => {
+			el.addEventListener("click", handleAnimationSwitch)
+		})
 	
-	button.addEventListener("click", function () {
-		const sitehostname = document.getElementById("addsite-text").value
-		
-		// Input sanitizing
-		if (sitehostname == "") {
-			return
-		}
-		
-		// This will naturally check if the table already contains this element.
-		sites.add(sitehostname)
-		
-		/* Rebuilding the table */
-		rebuildTable(tableref, sites)
-		
-	})
+	
+	
 }
+//?reg
 
 // Loading the entry point after DOM loads.
 document.addEventListener("DOMContentLoaded", main())

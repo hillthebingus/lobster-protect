@@ -8,10 +8,14 @@
 /* 	background-color: rgba(255, 0, 0, 0.1); */
 /* } */
 
-/* html */
+/* html and body */
 /*¿reg*/
 html {
 	background-color: var(--clr-bg);
+}
+
+body {
+	overflow-y: hidden;
 }
 /*?reg*/
 
@@ -29,8 +33,6 @@ div {
 /*¿reg*/
 nav
 {
-	position: sticky;
-	top: -10px;
 	display: flex;
 	width: fit-content;
 	margin: auto;

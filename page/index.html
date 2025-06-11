@@ -40,7 +40,7 @@
 	<nav>
 		
 		<label class="navbar-button">
-			<input name="navbar" type="radio" class="navbar-inv-radio" checked="true">
+			<input name="navbar" type="radio" class="navbar-inv-radio" checked="true" ref="sitelist-section">
 			<span class="navbar-button-bg navbar-left"></span>
 			<span class="navbar-button-text">
 				<span class="material-icons navbar-icon">
@@ -50,7 +50,7 @@
 		</label>
 		
 		<label class="navbar-button">
-			<input name="navbar" type="radio" class="navbar-inv-radio" >
+			<input name="navbar" type="radio" class="navbar-inv-radio" ref="toggles-section">
 			<span class="navbar-button-bg"></span>
 			<span class="navbar-button-text">
 				<span class="material-icons navbar-icon">
@@ -61,7 +61,7 @@
 		
 		
 		<label class="navbar-button">
-			<input name="navbar" type="radio" class="navbar-inv-radio">
+			<input name="navbar" type="radio" class="navbar-inv-radio" ref="advanced-section">
 			<span class="navbar-button-bg"></span>
 			<span class="navbar-button-text">
 				<span class="material-icons navbar-icon">
@@ -71,7 +71,7 @@
 		</label>
 		
 		<label class="navbar-button">
-			<input name="navbar" type="radio" class="navbar-inv-radio">
+			<input name="navbar" type="radio" class="navbar-inv-radio" ref="about-section">
 			<span class="navbar-button-bg navbar-right"></span>
 			<span class="navbar-button-text">
 				<span class="material-icons navbar-icon">
@@ -81,6 +81,7 @@
 		</label>
 	</nav>
 	<!--?reg-->
+	
 	
 	<!-- 
 	The funny swapping area.
@@ -93,14 +94,20 @@
 		<div class="outer">
 			<!-- Site list section -->
 			<!-- ¿reg -->
-			<section id="sitelist-section" class="inner">
-				
+			<section id="sitelist-section" class="inner content-show">
+				<table>
+					<th>Site</th>
+					<th>Options</th>
+					
+					
+					
+				</table>
 			</section>
 			<!-- ?reg -->
 			
 			<!-- The toggles section. -->
 			<!-- ¿reg -->
-			<section id="toggles-section" class="inner">
+			<section id="toggles-section" class="inner content-hide">
 				<div id="toggles-section-bg">
 					
 					<table id="toggles-section-table">
@@ -191,6 +198,7 @@
 	<!--?reg-->
 	
 	
+	<script src="settings.js"></script>
 	
 </body>
 

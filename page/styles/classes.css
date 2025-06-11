@@ -113,12 +113,11 @@
 .inv-checkbox:checked ~ .switch-border
 {
 	opacity: 1;
-	transform: scale(1.3, 1.3);
+	transform: scale(1.1, 1.1);
 }
 
 
 /*?reg*/
-
 
 /* Wrapper for the main content */
 /*¿reg*/
@@ -128,8 +127,10 @@
 	
 	margin: auto;
 }
+.separate-top {
+	margin-top: 4rem;
+}
 /*?reg*/
-
 
 /* Navigation bar buttons */
 /*¿reg*/
@@ -210,7 +211,6 @@
 
 /*?reg*/
 
-
 /* Tooltips */
 /*¿reg*/
 .tooltip-container
@@ -287,12 +287,15 @@
 /* pseudo non pseudo classes that trigger the hiding and showing animations. */
 /*¿reg*/
 .content-show {
-	transform: translateX(0px);
+	transition-delay: .4s;
 	opacity: 1;
 }
 
 .content-hide {
-	transform: translateX(10vw);
+	transform: scale(0.8, 1.33);
+	filter: blur(20px);
 	opacity: 0;
+	pointer-events: none;
 }
 /*?reg*/
+
