@@ -11,9 +11,9 @@
 	--clr-hlhl-gradient: #ff0000, #0040ff;
 	
 	--clr-switch-off: hsl(0, 0%, 10%);
-	--clr-switch-on: hsl(0, 0%, 70%);
+	--clr-switch-on: hsl(0, 0%, 30%);
 	--clr-button-off: hsl(0, 0%, 30%);
-	--clr-button-on: var(--clr-hl-gradient);
+	--clr-button-on: hsl(0, 0%, 10%);
 	
 	--soft-radius: 7px;
 	--medium-radius: 16px;
