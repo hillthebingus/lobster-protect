@@ -1,8 +1,10 @@
 
-/* The switch design*/
+/* The switch design, here's a lil explanation because it's a lil weird.
+ * It we make 2 pseudo elements, the ::before and ::after, and we fade the ::after out
+ * and the ::before in , creating the illusion that we're fading into a gradient*/
 /*¿reg*/
 
-/* The checkbox that makes the logic */
+/* The checkbox that marks the logic */
 .inv-checkbox {
 	display: none;
 }
@@ -32,6 +34,8 @@
 	transition: .4s ease-out;
 }
 
+/* We turn this one off when the switch is checked */
+.switch-bg::after,
 .switch-bg::before
 {
 	content: '';
@@ -39,7 +43,7 @@
 	position: absolute;
 	
 	left: 10%;
-	top: 15%;
+	top: 14%;
 	
 	border-radius: var(--medium-radius);
 	
@@ -53,14 +57,65 @@
 	transition: .4s ease-out;
 }
 
-.inv-checkbox:checked ~ .switch-bg::before {
-	left: 52%;
-	background-color: var(--clr-button-on);
+/* We turn this one on when it is checked */
+.switch-bg::before
+{	
+	z-index: 3;
+	opacity: 0;
+	
+	background: 
+		linear-gradient(45deg, var(--clr-button-on));	
 }
 
-.inv-checkbox:checked ~ .switch-bg {
-	background-color: var(--clr-switch-on);
+.switch-border
+{
+	position: absolute;
+	display: inline-block;
+	opacity: 0;
+	
+	background: linear-gradient(45deg, var(--clr-hlhl-gradient));
+	margin: auto;
+	
+	z-index: 1;
+	border-radius: var(--medium-radius);
+	
+	inset: 0;
+	
+	width: 100%;
+	height: 100%;
+	
+	transition: .4s ease-out;
 }
+
+/* I'm sure there's a better way to create a 
+ * transition into a gradient but i like can't be bothered */
+.inv-checkbox:checked + .switch-bg::after
+{
+	opacity: 0;
+}
+
+.inv-checkbox:checked + .switch-bg::before
+{
+	opacity: 1;
+}
+
+.inv-checkbox:checked + .switch-bg::before,
+.inv-checkbox:checked + .switch-bg::after
+{
+	transform: translateX(18px);
+}
+
+.inv-checkbox:checked + .switch-bg
+{
+	background: var(--clr-switch-on)
+}
+
+.inv-checkbox:checked ~ .switch-border
+{
+	opacity: 1;
+	transform: scale(1.1, 1.1);
+}
+
 
 /*?reg*/
 
