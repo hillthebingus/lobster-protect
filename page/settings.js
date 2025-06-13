@@ -1,8 +1,8 @@
 
-// rebuildTable(site_list, set)
+// rebuildTable(site_container, set)
 // Rebuilds the site list so it matches the set. Trigger this every time the addsite button is pressed.
 //¿reg
-function rebuildTable(list_table, set) {
+function rebuildTable(site_container, set) {
 	
 	// Clearing the table.
 	for (let i = list_table.rows.length - 1; i > 0; i--) {
@@ -40,8 +40,10 @@ function rebuildTable(list_table, set) {
 }
 //?reg
 
+// Handles the switch animation
+//¿reg
 function handleAnimationSwitch() {
-
+	document.body.classList = ""
 	let _current_section = document.getElementsByClassName("content-show")[0]
 	
 	_current_section.classList.remove("content-show")
@@ -49,7 +51,9 @@ function handleAnimationSwitch() {
 	
 	document.getElementById(this.getAttribute("ref")).classList.add("content-show")
 	document.getElementById(this.getAttribute("ref")).classList.remove("content-hide")	
+	
 }
+//?reg
 
 // Entry point
 //¿reg
@@ -57,10 +61,18 @@ async function main() {
 	
 	/* Making the navigation bar functional */
 	const nav_buttons = document.getElementsByClassName("navbar-inv-radio")
-	Array.from(nav_buttons).forEach(
-		(el) => {
+	Array.from(nav_buttons)
+		.forEach( (el) => {
 			el.addEventListener("click", handleAnimationSwitch)
 		})
+	
+	// Get the site list container.
+	const sitelist_container = document.getElementById("sitelist-container")
+	
+	// If the list has no elements spawn the placeholder.
+	if (sitelist_container.childElementCount <= 0) {
+		console.log("Spawn placeholder.")
+	}	
 	
 	
 	
@@ -68,4 +80,4 @@ async function main() {
 //?reg
 
 // Loading the entry point after DOM loads.
-document.addEventListener("DOMContentLoaded", main())
+document.addEventListener("DOMContentLoaded", main)

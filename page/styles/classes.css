@@ -286,16 +286,49 @@
 
 /* pseudo non pseudo classes that trigger the hiding and showing animations. */
 /*¿reg*/
+body.preload *
+{
+	animation-duration: 0s !important;
+	animation-delay: 0s !important;
+}
+
 .content-show {
-	transition-delay: .4s;
-	opacity: 1;
+	animation-name: content-show-kf;
+	animation-delay: .4s;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: both;
 }
 
 .content-hide {
-	transform: scale(0.8, 1.33);
-	filter: blur(20px);
-	opacity: 0;
-	pointer-events: none;
+	animation-name: content-hide-kf;
+	animation-duration: .7s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: both;
+}
+
+@keyframes content-show-kf {
+	0% {
+		opacity: 0;
+		filter: blur(15px);
+		transform: translateX(2vw);
+		display: initial;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes content-hide-kf {
+	99% {
+		transform: translateX(2vw);
+		opacity: 0;
+		filter: blur(15px);
+		pointer-events: none;
+	}
+	100% {
+		display: none;
+	}
 }
 /*?reg*/
 
