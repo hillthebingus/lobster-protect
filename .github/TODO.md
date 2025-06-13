@@ -16,6 +16,8 @@ Features of the site blocker.
 - [ ] Close browser on trigger
 - [ ] Redirection
 - [ ] Trigger happy mode
+- [ ] Tolerance
+- [ ] Reminders
 
 
 ## Project
