@@ -4,6 +4,8 @@
 	
 	--clr-bg: hsl(0, 0%, 3%);	
 	--clr-tooltipbg: hsl(0, 0%, 10%);	
+	--clr-placeholderbg: hsl(0, 0%, 12%);	
+	--clr-placeholderbg-hover: hsl(0, 0%, 20%);	
 	--clr-divbg: hsl(0, 0%, 5%);	
 	
 	--clr-hl-gradient: #fc6621, #ff59a9;

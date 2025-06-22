@@ -79,5 +79,28 @@
 	background-color: var(--clr-divbg);
 	border-radius: var(--soft-radius);
 }
+
+
+/* The placeholder. */
+#placeholder-title {
+	display: block;
+	
+	border-radius: calc(var(--medium-radius) - 1px);
+	width: fit-content;
+	margin: auto;
+	padding: 15px;
+	
+	background-color: var(--clr-placeholderbg);
+	font-size: 28px;
+	font-family: "Roboto Condensed", sans-serif;
+	font-weight: 400;
+	
+	
+	transition: .7s ease-out;
+	&:hover {
+		background-color: var(--clr-placeholderbg-hover);
+	}
+}
+
 /*?reg*/
 
