@@ -86,9 +86,10 @@
 	display: block;
 	
 	border-radius: calc(var(--medium-radius) - 1px);
-	width: fit-content;
+	width: 100%;
 	margin: auto;
-	padding: 15px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 	
 	background-color: var(--clr-placeholderbg);
 	font-size: 28px;
@@ -104,3 +105,29 @@
 
 /*?reg*/
 
+/* Placeholder grid */
+/* ¿reg */
+
+#sitelist-placeholder-container {
+	margin: 1rem;
+	display: grid;
+
+	grid-template-columns: 3fr 1fr;
+	gap: 1rem;
+
+	#placeholder-title {
+		grid-column: span 2;
+	}
+
+	#placeholder-body {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		margin: auto;
+
+		background-color: var(--clr-placeholderbg);
+		border-radius: var(--soft-radius);
+
+		font-family: "Roboto Condensed", sans-serif;
+	}
+}
+/* ?reg */
