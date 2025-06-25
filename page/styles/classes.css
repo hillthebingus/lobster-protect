@@ -373,6 +373,7 @@ body.preload *
 
 
 .preset-hitbox:hover {
+	outline: none;
 
 	> .preset-name {
 		color: black;

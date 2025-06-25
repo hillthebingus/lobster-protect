@@ -4,47 +4,49 @@
 <head>
 	<meta charset="UTF-8">
 	<title>LobsterProtect | Settings</title>
-	
+
 	<!-- Preconnecting to google fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	
+
 	<!-- Some fonts from google fonts -->
 	<!--¿reg-->
-	
-		<!-- Playfair -->
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-		
-		<!-- Jost -->
-		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		
-		<!-- Roboto Condensed -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<!-- Playfair -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+	<!-- Jost -->
+	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<!-- Roboto Flex -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+
+
 	<!--?reg-->
-	
+
 	<!-- Icons from google fonts -->
 	<!-- 
 	Yes i know you're supposed to only import the ones you're using, 
 	but idc i don't wanna be going back up here every time i want a new icon frick u
 	-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	
+
 	<!-- Modular stylesheets -->
 	<link rel="stylesheet" href="styles/classes.css"> <!-- Classes for certain items -->
 	<link rel="stylesheet" href="styles/globals.css"> <!-- Styling elements themselves -->
 	<link rel="stylesheet" href="styles/ids.css"> <!-- Unique things that aren't elements. -->
-	
+
 	<link rel="stylesheet" href="styles/vars.css"> <!-- variables for the previous css files -->
-	
+
 </head>
 
 <body class="preload">
 	<h1 id="title">Lobster Protect</h1>
-	
-	<!-- Navigation bar --> 
+
+	<!-- Navigation bar -->
 	<!--¿reg-->
 	<nav>
-		
+
 		<label class="navbar-button">
 			<input name="navbar" type="radio" class="navbar-inv-radio" checked="true" ref="sitelist-section">
 			<span class="navbar-button-bg navbar-left"></span>
@@ -54,7 +56,7 @@
 				</span> Site list
 			</span>
 		</label>
-		
+
 		<label class="navbar-button">
 			<input name="navbar" type="radio" class="navbar-inv-radio" ref="toggles-section">
 			<span class="navbar-button-bg"></span>
@@ -64,8 +66,8 @@
 				</span> Toggles
 			</span>
 		</label>
-		
-		
+
+
 		<label class="navbar-button">
 			<input name="navbar" type="radio" class="navbar-inv-radio" ref="advanced-section">
 			<span class="navbar-button-bg"></span>
@@ -75,7 +77,7 @@
 				</span> Advanced
 			</span>
 		</label>
-		
+
 		<label class="navbar-button">
 			<input name="navbar" type="radio" class="navbar-inv-radio" ref="about-section">
 			<span class="navbar-button-bg navbar-right"></span>
@@ -87,8 +89,8 @@
 		</label>
 	</nav>
 	<!--?reg-->
-	
-	
+
+
 	<!-- 
 	The funny swapping area.
 	These divs are all hidden and shown with javascript when the user clicks on the navbar, 
@@ -96,7 +98,7 @@
 	-->
 	<!--¿reg-->
 	<div class="wrapper-center separate-top">
-		
+
 		<div class="outer">
 			<!-- Site list section -->
 			<!-- ¿reg -->
@@ -114,7 +116,7 @@
 					</span>
 
 					<span id="placeholder-body">
-						It seems like you don't have any sites loaded, no worries! You can add some yourself — 
+						It seems like you don't have any sites loaded, no worries! You can add some yourself —
 						Or use one of these configuration presets!
 					</span>
 
@@ -135,17 +137,17 @@
 				</div>
 			</section>
 			<!-- ?reg -->
-			
+
 			<!-- The toggles section. -->
 			<!-- ¿reg -->
 			<section id="toggles-section" class="inner content-hide">
 				<div id="toggles-section-bg">
-					
+
 					<table id="toggles-section-table">
-						
+
 						<!--Whitelist Mode toggle ¿reg-->
 						<tr>
-							
+
 							<!-- The name of the setting -->
 							<td>
 								<div class="tooltip-container">
@@ -155,7 +157,7 @@
 									</span>
 								</div>
 							</td>
-							
+
 							<!-- The toggle button -->
 							<td>
 								<label class="switch-container">
@@ -166,10 +168,10 @@
 							</td>
 						</tr>
 						<!--?reg-->
-						
+
 						<!-- Close browser on trigger toggle ¿reg-->
 						<tr>
-							
+
 							<!-- The name of the setting -->
 							<td>
 								<div class="tooltip-container">
@@ -179,7 +181,7 @@
 									</span>
 								</div>
 							</td>
-							
+
 							<!-- The toggle button -->
 							<td>
 								<label class="switch-container">
@@ -190,10 +192,10 @@
 							</td>
 						</tr>
 						<!--?reg-->
-						
+
 						<!-- Debug Mode toggle ¿reg-->
 						<tr>
-							
+
 							<!-- The name of the setting -->
 							<td>
 								<div class="tooltip-container">
@@ -203,7 +205,7 @@
 									</span>
 								</div>
 							</td>
-							
+
 							<!-- The toggle button -->
 							<td>
 								<label class="switch-container">
@@ -214,23 +216,19 @@
 							</td>
 						</tr>
 						<!--?reg-->
-						
+
 					</table>
 				</div>
 			</section>
 			<!--?reg-->
-			
+
 		</div>
-		
-		
-		
-		
 	</div>
 	<!--?reg-->
-	
-	
+
+
 	<script src="settings.js"></script>
-	
+
 </body>
 
 </html>
