@@ -364,7 +364,7 @@ body.preload *
 
 .preset-hitbox {
 	border-radius: var(--hard-radius);
-	border: dotted 2px var(--clr-placeholderbg-hover);
+	outline: dotted 2px var(--clr-placeholderbg-hover);
 }
 
 .preset-name {

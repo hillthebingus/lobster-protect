@@ -114,17 +114,17 @@
 
 	grid-template-columns: 2.5fr 1fr;
 	gap: 1rem;
-	border: dotted 2px var(--clr-placeholderbg-hover);
+	outline: dotted 2px var(--clr-placeholderbg-hover);
 	border-radius: var(--medium-radius);
 	padding: 1rem;
 
 	#placeholder-title {
-		border: dotted 2px var(--clr-placeholderbg-hover);
+		outline: dotted 2px var(--clr-placeholderbg-hover);
 		grid-column: span 2;
 	}
 
 	#placeholder-body {
-		border: dotted 2px var(--clr-placeholderbg-hover);
+		outline: dotted 2px var(--clr-placeholderbg-hover);
 		padding-top: 2rem;
 		padding-bottom: 2rem;
 		margin: auto;
@@ -139,7 +139,7 @@
 #presets-container {
 	display: flex;
 	flex-direction: column;
-	gap: .3rem;
+	gap: .5rem;
 
 	a {
 		position: relative;
