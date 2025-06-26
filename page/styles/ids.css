@@ -155,3 +155,17 @@
 	}
 }
 /* ?reg */
+
+#sitelist-container {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+}
+
+#sitelist-header-name,
+#sitelist-header-options
+{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding: 1rem 0 1rem;
+}

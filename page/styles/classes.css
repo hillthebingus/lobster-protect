@@ -360,7 +360,7 @@ body.preload *
 	background: 
 		linear-gradient(45deg, var(--clr-hlhl-gradient));
 	scale: 0 1;
-	filter: sepia(50%);
+	filter: sepia(40%);
 }
 
 .preset-hitbox {
@@ -393,6 +393,7 @@ body.preload *
 /* ?reg */
 
 /* Utility classes for titles and all that */
+/* ¿reg */
 .title-2 {
 	width: fit-content;
 	margin: auto;
@@ -424,3 +425,6 @@ body.preload *
 .invisible {
 	opacity: 0;
 }
+/* ?reg */
+
+
