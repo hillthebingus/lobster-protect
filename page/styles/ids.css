@@ -74,7 +74,6 @@
 #sitelist-section {
 	width: 100%;
 	height: fit-content;
-	height: 50vh;
 	
 	background-color: var(--clr-divbg);
 	border-radius: var(--soft-radius);

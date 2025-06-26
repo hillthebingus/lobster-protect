@@ -321,13 +321,14 @@ body.preload *
 }
 
 @keyframes content-hide-kf {
-	99% {
+	99.9% {
 		transform: translateX(2vw);
 		opacity: 0;
 		filter: blur(15px);
 		pointer-events: none;
 	}
 	100% {
+		opacity: 0;
 		display: none;
 	}
 }
@@ -390,3 +391,36 @@ body.preload *
 	}
 }
 /* ?reg */
+
+/* Utility classes for titles and all that */
+.title-2 {
+	width: fit-content;
+	margin: auto;
+	font-size: 3rem;
+	font-weight: 600;
+	font-family: "Playfair Display", serif;
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+}
+
+.grad-underline {
+	position: relative;
+	&::before {
+		display: inline-block;
+		content: '';
+		position: absolute;
+
+		bottom: -10px;
+		left: -20%;
+		width: 140%;
+		height: 10px;
+
+		background: 
+			linear-gradient(40deg, var(--clr-hl-gradient));
+		border-radius: 2px;
+	}
+}
+
+.invisible {
+	opacity: 0;
+}
