@@ -17,6 +17,9 @@
 	--clr-button-off: hsl(0, 0%, 30%);
 	--clr-button-on: var(--clr-hl-gradient);
 	
+	--clr-nono: #f54242;
+	--clr-nono-hover: #F04624;
+
 	--soft-radius: 7px;
 	--medium-radius: 16px;
 	--hard-radius: 20px;

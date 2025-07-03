@@ -1,4 +1,3 @@
-
 /* The switch design, here's a lil explanation because it's a lil weird.
  * It we make 2 pseudo elements, the ::before and ::after, and we fade the ::after out
  * and the ::before in , creating the illusion that we're fading into a gradient*/
@@ -13,8 +12,8 @@
 .switch-container {
 	cursor: pointer;
 	position: relative;
-	display: inline-block;	
-	
+	display: inline-block;
+
 	width: 48px;
 	height: 27px;
 	border-radius: var(--soft-radius)
@@ -24,95 +23,87 @@
 .switch-bg {
 	position: absolute;
 	display: inline-block;
-	
+
 	width: 100%;
 	height: 100%;
 	border-radius: var(--medium-radius);
-	
+
 	inset: 0;
 	z-index: 2;
-	background:	var(--clr-switch-off);
+	background: var(--clr-switch-off);
 	transition: .4s ease-out;
 }
 
 /* We turn this one off when the switch is checked */
 .switch-bg::after,
-.switch-bg::before
-{
+.switch-bg::before {
 	content: '';
 	display: inline-block;
 	position: absolute;
-	
+
 	left: 10%;
 	top: 14%;
-	
+
 	border-radius: var(--medium-radius);
-	
+
 	height: 70%;
 	width: 40%;
 	z-index: 4;
-	
-	background: 
+
+	background:
 		var(--clr-button-off);
-	
+
 	transition: .4s ease-out;
 }
 
 /* We turn this one on when it is checked */
-.switch-bg::before
-{	
+.switch-bg::before {
 	z-index: 3;
 	opacity: 0;
-	
-	background: 
-		linear-gradient(45deg, var(--clr-button-on));	
+
+	background:
+		linear-gradient(45deg, var(--clr-button-on));
 }
 
-.switch-border
-{
+.switch-border {
 	position: absolute;
 	display: inline-block;
 	opacity: 0;
-	
+
 	background: linear-gradient(45deg, var(--clr-hlhl-gradient));
 	margin: auto;
-	
+
 	z-index: 1;
 	border-radius: var(--medium-radius);
-	
+
 	inset: 0;
-	
+
 	width: 100%;
 	height: 100%;
-	
+
 	transition: .4s ease-out;
 }
 
 /* I'm sure there's a better way to create a 
  * transition into a gradient but i like can't be bothered */
-.inv-checkbox:checked + .switch-bg::after
-{
+.inv-checkbox:checked+.switch-bg::after {
 	opacity: 0;
 }
 
-.inv-checkbox:checked + .switch-bg::before
-{
+.inv-checkbox:checked+.switch-bg::before {
 	opacity: 1;
 }
 
-.inv-checkbox:checked + .switch-bg::before,
-.inv-checkbox:checked + .switch-bg::after
-{
+.inv-checkbox:checked+.switch-bg::before,
+.inv-checkbox:checked+.switch-bg::after {
 	transform: translateX(18px);
 }
 
-.inv-checkbox:checked + .switch-bg
-{
+.inv-checkbox:checked+.switch-bg {
 	background: var(--clr-switch-on)
 }
 
-.inv-checkbox:checked ~ .switch-border
-{
+.inv-checkbox:checked~.switch-border {
 	opacity: 1;
 	transform: scale(1.1, 1.1);
 }
@@ -125,86 +116,81 @@
 .wrapper-center {
 	width: fit-content;
 	text-align: center;
-	
+
 	margin: auto;
 }
+
 .separate-top {
 	margin-top: 4rem;
 }
+
 /*?reg*/
 
 /* Navigation bar buttons */
 /*¿reg*/
 
-.navbar-inv-radio
-{
+.navbar-inv-radio {
 	display: none;
 }
 
 /* The hitbox of the radio button. */
-.navbar-button
-{
+.navbar-button {
 	position: relative;
 	display: flex;
-	
+
 	width: fit-content;
 	height: 4rem;
-	
+
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
 
-.navbar-button-bg
-{
+.navbar-button-bg {
 	position: absolute;
-	
+
 	width: 100;
 	height: 100%;
-	inset: 0;	
-	
+	inset: 0;
+
 	background-color: hsla(0, 0%, 10%, 1);
-	
+
 	border-bottom: solid 3px hsla(0, 0%, 10%, 0.7);
 	transition: .4s ease-out;
 }
 
 /* The text */
-.navbar-button-text
-{
+.navbar-button-text {
 	position: relative;
 	display: block;
 	font-family: "Jost", sans-serif;
-	
+
 	text-align: center;
 	margin: auto;
 }
 
 /* lil thingieds */
 /* for the leftmost button */
-.navbar-left
-{
+.navbar-left {
 	border-top-left-radius: var(--top-corner);
 	border-bottom-left-radius: var(--bottom-corner);
 }
 
 /* same thing as above but for the rightmost one */
-.navbar-right
-{
+.navbar-right {
 	border-top-right-radius: var(--top-corner);
 	border-bottom-right-radius: var(--bottom-corner);
 }
 
 
-/* Icons need to be offset a little because they look a bit */ 
+/* Icons need to be offset a little because they look a bit */
 /* weird if they have text next to them */
-.navbar-icon
-{
+.navbar-icon {
 	transform: translateY(0.3rem);
 	display: inline-block
 }
 
 /* how the button looks like when it's selected */
-.navbar-inv-radio:checked + .navbar-button-bg {
+.navbar-inv-radio:checked+.navbar-button-bg {
 	border-color: whitesmoke;
 	background-color: hsla(0, 0%, 30%, 0.7);
 }
@@ -214,60 +200,57 @@
 
 /* Tooltips */
 /*¿reg*/
-.tooltip-container
-{
+.tooltip-container {
 	width: fit-content;
 	position: relative;
 	text-align: left;
 }
 
-.tooltip-text
-{
+.tooltip-text {
 	position: absolute;
 	display: inline-block;
-	
+
 	width: max-content;
 	max-width: 250px;
 	height: fit-content;
-	
+
 	border-radius: var(--soft-radius);
-	
-	padding: 0.5rem;	
+
+	padding: 0.5rem;
 	left: 105%;
 	z-index: 10;
-	
+
 	text-align: center;
-	
+
 	background-color: var(--clr-tooltipbg);
-	
+
 	opacity: 0;
 	visibility: hidden;
-	
+
 	transition: .4s ease-in;
 }
 
-.tooltip-text::after
-{
+.tooltip-text::after {
 	content: "";
-	
+
 	position: absolute;
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	
+
 	border-radius: var(--hard-radius);
 	background-color: var(--clr-tooltipbg);
 	left: -10px;
 	top: 0;
 }
 
-.tooltip-container:hover > .tooltip-text
-{
-	
+.tooltip-container:hover>.tooltip-text {
+
 	visibility: visible;
 	transform: translateX(5px);
 	opacity: 1;
 }
+
 /*?reg*/
 
 /* Stacking the divs on top of each other. */
@@ -275,7 +258,7 @@
 .inner {
 	position: absolute;
 	inset: 0;
-	
+
 	transition: .4s ease-in-out;
 }
 
@@ -283,12 +266,12 @@
 	position: relative;
 	width: 50vw;
 }
+
 /*?reg*/
 
 /* pseudo non pseudo classes that trigger the hiding and showing animations. */
 /*¿reg*/
-body.preload *
-{
+body.preload * {
 	animation-duration: 0s !important;
 	animation-delay: 0s !important;
 }
@@ -315,6 +298,7 @@ body.preload *
 		transform: translateX(2vw);
 		display: initial;
 	}
+
 	100% {
 		opacity: 1;
 	}
@@ -327,18 +311,19 @@ body.preload *
 		filter: blur(15px);
 		pointer-events: none;
 	}
+
 	100% {
 		opacity: 0;
 		display: none;
 	}
 }
+
 /*?reg*/
 
 /* Preset buttons */
 /* ¿reg */
 .preset-hitbox::before,
-.preset-hitbox::after
-{
+.preset-hitbox::after {
 	transition: .5s ease-out;
 	content: '';
 
@@ -357,7 +342,7 @@ body.preload *
 .preset-hitbox::after {
 	opacity: 0;
 	z-index: 1;
-	background: 
+	background:
 		linear-gradient(45deg, var(--clr-hlhl-gradient));
 	scale: 0 1;
 	filter: sepia(40%);
@@ -376,7 +361,7 @@ body.preload *
 .preset-hitbox:hover {
 	outline: none;
 
-	> .preset-name {
+	>.preset-name {
 		color: black;
 	}
 
@@ -390,6 +375,7 @@ body.preload *
 		scale: 1 1;
 	}
 }
+
 /* ?reg */
 
 /* Utility classes for titles and all that */
@@ -406,6 +392,7 @@ body.preload *
 
 .grad-underline {
 	position: relative;
+
 	&::before {
 		display: inline-block;
 		content: '';
@@ -416,15 +403,94 @@ body.preload *
 		width: 140%;
 		height: 10px;
 
-		background: 
+		background:
 			linear-gradient(40deg, var(--clr-hl-gradient));
 		border-radius: 2px;
 	}
 }
 
-.invisible {
-	opacity: 0;
-}
 /* ?reg */
 
+/* Site entries  */
+/* ¿reg */
+.entry-name {
+	margin: 0 2rem 0;
+	padding: .5rem .5rem;
+	border-radius: var(--soft-radius);
 
+	background: var(--clr-placeholderbg-hover);
+	font-family: "Jost", sans-serif;
+	font-size: .8rem;
+}
+
+.entry-del-hb {
+	transition: .5s ease-out;
+	cursor: pointer;
+
+	width: 40%;
+	height: 100%;
+
+	margin: auto;
+	border-radius: var(--hard-radius);
+
+	&:hover>.entry-del-bg {
+		width: 100%;
+		border-radius: var(--soft-radius);
+		background: var(--clr-nono-hover);
+	}
+
+	&:hover {
+		width: 50%;
+	}
+
+	&:active {
+		transition: .2s;
+		width: 20%;
+		filter: blur(20px);
+	}
+}
+
+.entry-del-bg {
+	transition: .5s ease-out;
+
+	border-radius: var(--hard-radius);
+	position: relative;
+	display: inline-block;
+
+	width: 100%;
+	height: 100%;
+
+	background: var(--clr-nono);
+
+	&::after {
+		content: '-';
+		font-size: 1rem;
+
+		position: absolute;
+		width: fit-content;
+		height: fit-content;
+
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+}
+
+.list-separator {
+	display: block;
+	height: 3px;
+	width: 50%;
+	margin: auto;
+
+	background:
+		linear-gradient(45deg, var(--clr-hl-gradient));
+
+	grid-column: span 2;
+}
+
+.entry-del-inv-button {
+	display: none;
+}
+
+
+/* ?reg */
