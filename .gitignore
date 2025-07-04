@@ -1,14 +1,11 @@
-# my ugly frickin ui concept, the final page didn't even end up looking like it 💔🥀
-/ui/concept.png
-
-# The artist is credited on the page itself
-/ui/img/.credits
+# i hate npm with every fiber of my being
+# i js want autocompletion for the chrome api twin why are u like this 💔
+/node_modules
+package.json
+package-lock.json
 
 # An utility file, used for my lil project management tool. i should probably post it sometime
 *.wkalias
-
-# Stupid thing
-.vscode
 
 # vim stuff
 *.swp
