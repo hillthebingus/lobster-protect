@@ -36,8 +36,8 @@ async function main() {
 	Log(true, "main", "Welcome to LobsterProtect!");
 
 	// Getting the response object
-	const { blacklist_arr, opts } = await chrome.storage.local.get({
-		blacklist_arr: ["www.youtube.com", "www.google.com"],
+	const { sites_arr, opts } = await chrome.storage.local.get({
+		sites_arr: ["www.youtube.com", "www.google.com"],
 		opts: {
 			on_trigger: {
 				action: E_Actions.NONE,
@@ -47,16 +47,16 @@ async function main() {
 		},
 	});
 
-	// Building a set out of the sites array, to prevent duplicate entries
-	const bl_set = new Set(blacklist_arr);
-	Log(opts.debug, "main", "Loaded site list:", bl_set);
+	// Building a set out of the sites array, to prevent duplicate entries if any.
+	const siteset = new Set(sites_arr);
+	Log(opts.debug, "main", "Loaded site list:", siteset);
 
 	// Getting the current site
 	const current_site = window.location.hostname;
 	Log(opts.debug, "main", "Found hostname:", current_site);
 
 	// If we're on a site we shouldn't be in
-	if (bl_set.has(current_site)) onTrigger(opts.debug, opts.on_trigger);
+	if (siteset.has(current_site)) onTrigger(opts.debug, opts.on_trigger);
 }
 
 // Loading the entry point after content loads.
