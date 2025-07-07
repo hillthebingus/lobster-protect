@@ -1,4 +1,4 @@
-// Funny logging function i made¿reg
+// Funny logging function i made ¿reg
 function Log(is_enabled, fn, ...msg) {
 	if (is_enabled) {
 		console.log(`-- LobsterProtect::${fn}() \n\t::`, ...msg);
@@ -11,19 +11,25 @@ function onTrigger(dbg, order) {
 	Log(dbg, "onTrigger", "Triggered");
 
 	switch (order.action) {
-		case E_Actions.REDIRECT:
-			Log(dbg, "onTrigger", "Redirecting to: ", order.redirect);
-			window.location.hostname = order.redirect;
+		case E_Actions.CLOSE_WINDOW:
+			Log(dbg, "onTrigger::CLOSE_WINDOW", "Connecting to service worker...");
+			const _orders = chrome.runtime.connect({ name: "orders" });
+			_orders.postMessage({
+				author: chrome.runtime.id,
+				action: "CLOSE_WINDOW",
+			});
+
 			break;
 
-		case E_Actions.CLOSE_WINDOW:
-			Log(dbg, "onTrigger", "Destroying window...");
+		case E_Actions.REDIRECT:
+			Log(dbg, "onTrigger::REDIRECT", "Redirecting to: ", order.redirect);
+			window.location.hostname = order.redirect;
 			break;
 
 		case E_Actions.NONE:
 			Log(
 				true,
-				"onTrigger",
+				"onTrigger::NONE",
 				"I was triggered, but i was told to not do anything.",
 			);
 			break;
@@ -40,9 +46,10 @@ async function main() {
 		sites_arr: ["www.youtube.com", "www.google.com"],
 		opts: {
 			on_trigger: {
-				action: E_Actions.NONE,
+				action: E_Actions.CLOSE_WINDOW,
 				redirect: "www.minecraft.net",
 			},
+			whitelist: false,
 			debug: true,
 		},
 	});
@@ -56,7 +63,11 @@ async function main() {
 	Log(opts.debug, "main", "Found hostname:", current_site);
 
 	// If we're on a site we shouldn't be in
-	if (siteset.has(current_site)) onTrigger(opts.debug, opts.on_trigger);
+	if (siteset.has(current_site) && !opts.whitelist) {
+		onTrigger(opts.debug, opts.on_trigger);
+	} else if (!siteset.has(current_site) && opts.whitelist) {
+		onTrigger(opts.debug, opts.on_trigger);
+	}
 }
 
 // Loading the entry point after content loads.
