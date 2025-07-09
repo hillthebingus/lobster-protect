@@ -1,4 +1,9 @@
 
+/* TODO
+ * Fix RebuildTable
+ *
+ * It's not working with the new sitels format.
+ */
 // rebuildTable(site_container, set)
 // Rebuilds the site list so it matches the set. Trigger this every time the addsite button is pressed.
 //¿reg
@@ -70,7 +75,7 @@ async function main() {
 	const sitelist_container = document.getElementById("sitelist-container")
 	const sitelist_placeholder = document.getElementById("sitelist-placeholder-container")
 
-	// If the list has no elements spawn the placeholder.
+	// If the list has elements remove the placeholder.
 	if (!sitelist_container.childElementCount <= 0) {
 		console.log("Removing placeholder.")
 		sitelist_placeholder.remove()
