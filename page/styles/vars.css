@@ -1,0 +1,26 @@
+:root {
+	--bottom-corner: 5px;
+	--top-corner: 20px;
+	
+	--clr-bg: hsl(0, 0%, 3%);	
+	--clr-tooltipbg: hsl(0, 0%, 10%);	
+	--clr-placeholderbg: hsl(0, 0%, 12%);	
+	--clr-placeholderbg-hover: hsl(0, 0%, 20%);	
+	--clr-divbg: hsl(0, 0%, 5%);	
+	
+	--clr-hl-gradient: #fc6621, #ff59a9;
+	/* brighter gradient */
+	--clr-hlhl-gradient: #ff0000, #0040ff;
+	
+	--clr-switch-off: hsl(0, 0%, 10%);
+	--clr-switch-on: hsl(0, 0%, 70%);
+	--clr-button-off: hsl(0, 0%, 30%);
+	--clr-button-on: var(--clr-hl-gradient);
+	
+	--clr-nono: #f54242;
+	--clr-nono-hover: #F04624;
+
+	--soft-radius: 7px;
+	--medium-radius: 16px;
+	--hard-radius: 20px;
+}

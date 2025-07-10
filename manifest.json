@@ -1,9 +1,8 @@
 {
-	"$schema":"http://json.schemastore.org/chrome-manifest",
-
+	"$schema": "http://json.schemastore.org/chrome-manifest",
 	"manifest_version": 3,
 	"name": "Lobster Protect - Site blocker",
-	"short_name": "LobProtect",
+	"short_name": "LProtect",
 	"description": "A free and Open-Source site blocker.",
 	"version": "0.0",
 	"permissions": [
@@ -27,10 +26,11 @@
 				"<all_urls>"
 			],
 			"js": [
+				"src/content/utils.js",
 				"src/content/content.js"
 			],
 			"run_at": "document_start"
 		}
 	],
-	"options_page": "page/settings.html"
+	"options_page": "page/index.html"
 }

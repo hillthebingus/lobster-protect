@@ -1,68 +1,37 @@
-/*
-* Global elements file, no classes, no ids, just raw elements
-*/
+/* Debug, uncomment thingies */
 
+/* *, */
+/* *::before, */
+/* *::after */ 
+/* { */
+/* 	outline: solid 1px red; */
+/* 	background-color: rgba(255, 0, 0, 0.1); */
+/* } */
 
-/*
-* the silly html element
-* */
+/* html and body */
+/*¿reg*/
 html {
-	background: fixed;
-	background-image: url("../../resources/img/bg.jpg");
-	background-size: cover;
-	background-position: 0 0px;
+	background-color: var(--clr-bg);
 }
 
-/*
-* Text thingies
-* */
+/*?reg*/
+
+/* text */
 /*¿reg*/
-p,
-footer,
-td,
-h2 {
-	font-family: 'Inter';
-	font-weight: light;
-	font-size: 16px;
-	cursor: default;
+h1,
+span,
+div {
+	font-size: large;
+	color: whitesmoke;
 }
 /*?reg*/
 
-/* Links */
+/* Some things for the main page */
 /*¿reg*/
-a:any-link {
-	color: #010852;
-}
-/*?reg*/
-
-
-/* Credits text */
-/*¿reg*/
-footer {
-	position: fixed;
-	font-size: smaller;
-	margin-bottom: 10px;
-	margin-left: 10px;
-	bottom: 0;
-	right: 10px;
-	text-shadow: #000000ff 0px 0px 10px;
-	color: white;
-}
-/*?reg*/
-
-/*
-* Text inputs
-* TODO move this to a class
-* */
-/*¿reg*/
-input[type=text] {
-	appearance: none;
-	border: none;
-	outline: none;
-	border-bottom: .2em solid #222543;
-	border-radius: .2em .2em 0 0;
-	padding: .4em;
-	color: #222543;
-	opacity: 20%;
+nav
+{
+	display: flex;
+	width: fit-content;
+	margin: auto;
 }
 /*?reg*/

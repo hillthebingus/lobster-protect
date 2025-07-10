@@ -1,4 +1,13 @@
-function rebuildTable(list_table, set) {
+
+/* TODO
+ * Fix RebuildTable
+ *
+ * It's not working with the new sitels format.
+ */
+// rebuildTable(site_container, set)
+// Rebuilds the site list so it matches the set. Trigger this every time the addsite button is pressed.
+//¿reg
+function rebuildTable(site_container, set) {
 
 	// Clearing the table.
 	for (let i = list_table.rows.length - 1; i > 0; i--) {
@@ -27,40 +36,55 @@ function rebuildTable(list_table, set) {
 		options.appendChild(button_element)
 
 		// Making the delete button do stuff
-		button_element.addEventListener("click", function () {
+		button_element.addEventListener("click", function() {
 			document.getElementById(this.getAttribute("ref")).remove()
 			set.delete(this.getAttribute("ref"))
 		})
 	})
 
 }
+//?reg
 
+// Handles the switch animation
+//¿reg
+function handleAnimationSwitch() {
+	document.body.classList = ""
+	let _current_section = document.getElementsByClassName("content-show")[0]
+
+	_current_section.classList.remove("content-show")
+	_current_section.classList.add("content-hide")
+
+	document.getElementById(this.getAttribute("ref")).classList.add("content-show")
+	document.getElementById(this.getAttribute("ref")).classList.remove("content-hide")
+
+}
+//?reg
 
 // Entry point
+//¿reg
 async function main() {
-	let { _sites } = await chrome.storage.local.get( { sites: [] })
-	let sites = new Set(_sites)
 
-	// table that shows the site list
-	const tableref = document.getElementById("list_area").getElementsByTagName('tbody')[0]
-	const button = document.getElementById("addsite-button")
+	/* Making the navigation bar functional */
+	const nav_buttons = document.getElementsByClassName("navbar-inv-radio")
+	Array.from(nav_buttons)
+		.forEach((el) => {
+			el.addEventListener("click", handleAnimationSwitch)
+		})
 
-	button.addEventListener("click", function () {
-		const sitehostname = document.getElementById("addsite-text").value
+	// Get the site list container.
+	const sitelist_container = document.getElementById("sitelist-container")
+	const sitelist_placeholder = document.getElementById("sitelist-placeholder-container")
 
-		// Input sanitizing
-		if (sitehostname == "") {
-			return
-		}
+	// If the list has elements remove the placeholder.
+	if (!sitelist_container.childElementCount <= 0) {
+		console.log("Removing placeholder.")
+		sitelist_placeholder.remove()
+	}
 
-		// This will naturally check if the table already contains this element.
-		sites.add(sitehostname)
 
-		/* Rebuilding the table */
-		rebuildTable(tableref, sites)
 
-	})
 }
+//?reg
 
 // Loading the entry point after DOM loads.
-document.addEventListener("DOMContentLoaded", main())
+document.addEventListener("DOMContentLoaded", main)

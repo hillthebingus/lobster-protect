@@ -1,63 +1,48 @@
-let log = undefined
+function ordersHandler(order) {
 
-// Call new to construct a new message for the log port.
-class Message {
-	constructor(author, fn, ...args){
-		this.author = author
-		this.fn = fn
-		this.msg = args
+	/* NOTE
+	 * If you're reading this after reading the FIXME from the previous commit
+	 * and are wondering why i removed it- cuz i made it sound like it was super serious...
+	 *
+	 * idk what i was on, but it really wasn't that necessary
+	 * if someone wanted to make a malicious extension- why on earth would they use 
+	 * my orders port for that instead of just using the chrome API themselves :sob
+	 * 
+	 * i'm literally stupid
+	 * */
+	// Verifying there's an identity.
+	if (order.author === undefined) {
+		console.error("Could not find an author. Returning.")
+		return
 	}
-}
 
-function onOrder(order) {
-	log
-	.postMessage(new Message(
-				chrome.runtime.id,
-				"onOrder",
-				`Received order from ${order.author}`))
+	console.log("!!", order.action,"order received from author:", order.author)
 
-	// I don't know what i'm gonna use this service worker for 
-	// since i'm pretty sure i can call most of the functions the site blocker has 
-	// from the content script, but it's good to have it here ig
-	// i'll remove it if i don't use it
+	// Available orders.
+	switch (order.action) {
+		case "CLOSE_WINDOW":
+			// Getting the current window and deleting it.
+			console.log(order.action)
+			chrome.windows.getCurrent({}).then((win) => {
+				chrome.windows.remove(win.id);
+			});
+			break;
+	}
 }
 
 function connectionHandler(port) {
-	console.log("Received connect from: ", port.name)
+	console.log("Received connect from: ", port.name);
 
-	// I don't think this is good code but like, whatever
 	switch (port.name) {
-		case "log":
-			log = port // Assigning this port to a global variable
-			break;
-		case "cmd":
-			port.onMessage.addListener(onOrder)
-			break;
-		default:
-			log
-			.postMessage(new Message(
-					chrome.runtime.id,
-					"connectionHandler", 
-					"Invalid port, disconnecting."))
-			port.disconnect()
+		case "orders":
+			port.onMessage.addListener(ordersHandler);
 			break;
 	}
-
-	if (log === undefined){
-		port.disconnect()
-		console.log("Cannot log to notify the connection, so a disconnect was called.")
-	}
-
-	log
-	.postMessage(new Message(
-			chrome.runtime.id,
-			"connectionHandler",
-			`Connection established on ${port.name}.`))
 
 	port.onDisconnect.addListener(() => {
-		console.log(`-- Disconnected from port ${port.name}`)
-	})
+		console.log(`-- Disconnected from port ${port.name}`);
+	});
 }
 
 // Entry point?
-chrome.runtime.onConnect.addListener(connectionHandler)
+chrome.runtime.onConnect.addListener(connectionHandler);

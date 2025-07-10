@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>LobsterProtect | Settings</title>
+
+	<!-- Preconnecting to google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- Some fonts from google fonts -->
+	<!--¿reg-->
+
+	<!-- Playfair -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+		rel="stylesheet">
+
+	<!-- Jost -->
+	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+
+	<!-- Roboto Flex -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+		rel="stylesheet">
+
+
+	<!--?reg-->
+
+	<!-- Icons from google fonts -->
+	<!-- 
+	Yes i know you're supposed to only import the ones you're using, 
+	but idc i don't wanna be going back up here every time i want a new icon frick u
+	-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Modular stylesheets -->
+	<link rel="stylesheet" href="styles/classes.css"> <!-- Classes for certain items -->
+	<link rel="stylesheet" href="styles/globals.css"> <!-- Styling elements themselves -->
+	<link rel="stylesheet" href="styles/ids.css"> <!-- Unique things that aren't elements. -->
+
+	<link rel="stylesheet" href="styles/vars.css"> <!-- variables for the previous css files -->
+	<script src="settings.js"></script>
+
+</head>
+
+<body class="preload">
+	<h1 id="title">Lobster Protect</h1>
+
+	<!-- Navigation bar -->
+	<!--¿reg-->
+	<nav>
+
+		<label class="navbar-button">
+			<input name="navbar" type="radio" class="navbar-inv-radio" checked="true" ref="sitelist-section">
+			<span class="navbar-button-bg navbar-left"></span>
+			<span class="navbar-button-text">
+				<span class="material-icons navbar-icon">
+					menu
+				</span> Site list
+			</span>
+		</label>
+
+		<label class="navbar-button">
+			<input name="navbar" type="radio" class="navbar-inv-radio" ref="toggles-section">
+			<span class="navbar-button-bg"></span>
+			<span class="navbar-button-text">
+				<span class="material-icons navbar-icon">
+					toggle_on
+				</span> Toggles
+			</span>
+		</label>
+
+
+		<label class="navbar-button">
+			<input name="navbar" type="radio" class="navbar-inv-radio" ref="advanced-section">
+			<span class="navbar-button-bg"></span>
+			<span class="navbar-button-text">
+				<span class="material-icons navbar-icon">
+					library_add
+				</span> Advanced
+			</span>
+		</label>
+
+		<label class="navbar-button">
+			<input name="navbar" type="radio" class="navbar-inv-radio" ref="about-section">
+			<span class="navbar-button-bg navbar-right"></span>
+			<span class="navbar-button-text">
+				<span class="material-icons navbar-icon">
+					info
+				</span> About
+			</span>
+		</label>
+	</nav>
+	<!--?reg-->
+
+	<!-- 
+	The funny swapping area.
+	These divs are all hidden and shown with javascript when the user clicks on the navbar, 
+	so we can display an animation when we change sections 
+	-->
+	<!--¿reg-->
+	<div class="wrapper-center separate-top">
+
+		<div class="outer">
+			<!-- Site list section -->
+			<!-- ¿reg -->
+			<section id="sitelist-section" class="inner content-show">
+				<h1 class="title-2 grad-underline">Site list</h1>
+
+				<div id="sitelist-container">
+					<span id="sitelist-header-name" class="grad-underline">Site name</span>
+					<span id="sitelist-header-options" class="grad-underline">Options</span>
+
+					<span class="entry-name">www.youtube.com</span>
+					<label class="entry-del-hb">
+						<input type="button" class="entry-del-inv-button">
+						<span class="entry-del-bg"></span>
+					</label>
+					<span class="list-separator"></span>
+
+					<span class="entry-name">www.youtube.com</span>
+					<label class="entry-del-hb">
+						<input type="button" class="entry-del-inv-button">
+						<span class="entry-del-bg"></span>
+					</label>
+					<span class="list-separator"></span>
+				</div>
+
+
+				<!-- The placeholder that we only show when there's no sites on the site list. -->
+				<div id="sitelist-placeholder-container">
+					<span id="placeholder-title">
+						🥳Welcome to LobsterProtect!
+					</span>
+
+					<span id="placeholder-body">
+						It seems like you don't have any sites loaded... No worries! You can add some yourself —
+						Or use one of these configuration presets! (follow the instructions on the github)
+					</span>
+
+					<!-- The placeholder buttons -->
+					<div id="presets-container">
+						<a href="#" class="preset-hitbox">
+							<span class="preset-name">Lobster 🦞</span>
+						</a>
+
+						<a href="#" class="preset-hitbox">
+							<span class="preset-name">Responsible Adult 👷‍♂️</span>
+						</a>
+
+						<a href="#" class="preset-hitbox">
+							<span class="preset-name">No-no sites ❌</span>
+						</a>
+					</div>
+				</div>
+			</section>
+			<!-- ?reg -->
+
+			<!-- The toggles section. -->
+			<!-- ¿reg -->
+			<section id="toggles-section" class="inner content-hide">
+				<div id="toggles-section-bg">
+
+					<table id="toggles-section-table">
+
+						<!--Whitelist Mode toggle ¿reg-->
+						<tr>
+
+							<!-- The name of the setting -->
+							<td>
+								<div class="tooltip-container">
+									Whitelist mode
+									<span class="tooltip-text">
+										Any site that isn't on the site list now triggers Lobster Protect.
+									</span>
+								</div>
+							</td>
+
+							<!-- The toggle button -->
+							<td>
+								<label class="switch-container">
+									<input type="checkbox" class="inv-checkbox">
+									<span class="switch-bg"></span>
+									<span class="switch-border"></span>
+								</label>
+							</td>
+						</tr>
+						<!--?reg-->
+
+						<!-- Close browser on trigger toggle ¿reg-->
+						<tr>
+
+							<!-- The name of the setting -->
+							<td>
+								<div class="tooltip-container">
+									Close browser on trigger
+									<span class="tooltip-text">
+										This is a tooltip.
+									</span>
+								</div>
+							</td>
+
+							<!-- The toggle button -->
+							<td>
+								<label class="switch-container">
+									<input type="checkbox" class="inv-checkbox">
+									<span class="switch-bg"></span>
+									<span class="switch-border"></span>
+								</label>
+							</td>
+						</tr>
+						<!--?reg-->
+
+						<!-- Debug Mode toggle ¿reg-->
+						<tr>
+
+							<!-- The name of the setting -->
+							<td>
+								<div class="tooltip-container">
+									Debug mode
+									<span class="tooltip-text">
+										This is a tooltip.
+									</span>
+								</div>
+							</td>
+
+							<!-- The toggle button -->
+							<td>
+								<label class="switch-container">
+									<input type="checkbox" class="inv-checkbox">
+									<span class="switch-bg"></span>
+									<span class="switch-border"></span>
+								</label>
+							</td>
+						</tr>
+						<!--?reg-->
+
+					</table>
+				</div>
+			</section>
+			<!--?reg-->
+
+			<!-- TODO 
+			Rest of the sections. 
+			-->
+		</div>
+	</div>
+	<!--?reg-->
+
+
+
+</body>
+
+</html>
