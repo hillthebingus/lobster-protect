@@ -6,8 +6,13 @@ function Log(is_enabled, fn, ...msg) {
 }
 // ?reg
 
+/* TODO:
+ * Overrides & working with new sitels format.
+ *
+ * Find a way to implement these features.
+ */
 // Called only when LobsterProtect is triggered ¿reg
-function onTrigger(dbg, order) {
+function onTrigger(dbg, order, _override) {
 	Log(dbg, "onTrigger", "Triggered");
 
 	switch (order.action) {
@@ -18,7 +23,6 @@ function onTrigger(dbg, order) {
 				author: chrome.runtime.id,
 				action: "CLOSE_WINDOW",
 			});
-
 			break;
 
 		case E_Actions.REDIRECT:
@@ -42,11 +46,22 @@ async function main() {
 	Log(true, "main", "Welcome to LobsterProtect!");
 
 	// Getting the response object
-	const { sites_arr, opts } = await chrome.storage.local.get({
-		sites_arr: ["www.youtube.com", "www.google.com"],
+	const { sitels, opts } = await chrome.storage.local.get({
+		sitels: [
+			{
+				url: "www.youtube.com",
+				strictness: -1,
+				action_override: null
+			},
+			{
+				url: "www.google.com",
+				strictness: -1,
+				action_override: null
+			}
+		],
 		opts: {
 			on_trigger: {
-				action: E_Actions.CLOSE_WINDOW,
+				action: E_Actions.NONE,
 				redirect: "www.minecraft.net",
 			},
 			whitelist: false,
@@ -54,8 +69,9 @@ async function main() {
 		},
 	});
 
+
 	// Building a set out of the sites array, to prevent duplicate entries if any.
-	const siteset = new Set(sites_arr);
+	const siteset = new Set(sitels);
 	Log(opts.debug, "main", "Loaded site list:", siteset);
 
 	// Getting the current site
@@ -63,6 +79,7 @@ async function main() {
 	Log(opts.debug, "main", "Found hostname:", current_site);
 
 	// If we're on a site we shouldn't be in
+	// FIXME this doesn't work anymore.
 	if (siteset.has(current_site) && !opts.whitelist) {
 		onTrigger(opts.debug, opts.on_trigger);
 	} else if (!siteset.has(current_site) && opts.whitelist) {
