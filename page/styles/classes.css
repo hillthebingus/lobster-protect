@@ -93,7 +93,6 @@
 .inv-checkbox:checked+.switch-bg::before {
 	opacity: 1;
 }
-/*?reg*/
 
 .inv-checkbox:checked+.switch-bg::before,
 .inv-checkbox:checked+.switch-bg::after {
@@ -108,8 +107,6 @@
 	opacity: 1;
 	transform: scale(1.1, 1.1);
 }
-
-
 /*?reg*/
 
 /* Wrapper for the main content */
@@ -416,39 +413,31 @@ body.preload * {
 /* ¿reg */
 .entry-name {
 	margin: 0 2rem 0;
-	padding: .5rem .5rem;
+
+
+	padding: .5rem;
 	border-radius: var(--soft-radius);
 
 	background: var(--clr-placeholderbg-hover);
 	font-family: "Jost", sans-serif;
-	font-size: .8rem;
+	font-size: 1rem;
 }
 
 .entry-del-hb {
 	transition: .5s ease-out;
 	cursor: pointer;
 
-	width: 40%;
-	height: 100%;
+	width: 50%;
+	height: 70%;
 
 	margin: auto;
 	border-radius: var(--hard-radius);
 
 	&:hover>.entry-del-bg {
-		width: 100%;
 		border-radius: var(--soft-radius);
 		background: var(--clr-nono-hover);
 	}
 
-	&:hover {
-		width: 50%;
-	}
-
-	&:active {
-		transition: .2s;
-		width: 20%;
-		filter: blur(20px);
-	}
 }
 
 .entry-del-bg {
@@ -465,6 +454,7 @@ body.preload * {
 
 	&::after {
 		content: '-';
+		color: black;
 		font-size: 1rem;
 
 		position: absolute;
@@ -477,7 +467,7 @@ body.preload * {
 	}
 }
 
-.list-separator {
+.list-separator:not(:last-child) {
 	display: block;
 	height: 3px;
 	width: 50%;
@@ -493,3 +483,4 @@ body.preload * {
 	display: none;
 }
 
+/*?reg*/

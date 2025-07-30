@@ -15,7 +15,7 @@
 }
 
 #title::before {
-	content: '';
+	content: "";
 
 	position: absolute;
 	display: inline-block;
@@ -49,7 +49,7 @@
 }
 
 #toggles-section-bg::before {
-	content: '';
+	content: "";
 	position: absolute;
 	display: inline-block;
 	inset: 0;
@@ -76,7 +76,6 @@
 	border-radius: var(--soft-radius);
 }
 
-
 /* The placeholder. */
 #placeholder-title {
 	display: block;
@@ -92,8 +91,7 @@
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 400;
 
-
-	transition: .7s ease-out;
+	transition: 0.7s ease-out;
 
 	&:hover {
 		background-color: var(--clr-placeholderbg-hover);
@@ -136,7 +134,7 @@
 #presets-container {
 	display: flex;
 	flex-direction: column;
-	gap: .5rem;
+	gap: 0.5rem;
 
 	a {
 		position: relative;
@@ -149,12 +147,11 @@
 		display: block;
 		margin: auto;
 		z-index: 3;
-		font-size: .8rem;
+		font-size: 0.8rem;
 	}
 }
 
 /* ?reg */
-
 
 /* Sitelist container */
 /* ¿reg */
@@ -162,10 +159,8 @@
 #sitelist-container {
 	position: relative;
 	display: grid;
-	grid-template-columns: 3fr 1fr;
-	background:
-		hsl(from var(--clr-placeholderbg) h s calc(l * 0.7));
-
+	grid-template-columns: 4fr 1fr;
+	background: hsl(from var(--clr-placeholderbg) h s calc(l * 0.7));
 
 	border: 2px solid var(--clr-placeholderbg-hover);
 	border-radius: var(--soft-radius);
@@ -173,23 +168,136 @@
 	margin: 2rem;
 	gap: 0.5rem;
 	z-index: 0;
-
 }
 
 #sitelist-header-name,
 #sitelist-header-options {
+	/*why is it stupid to center text vertically...*/
 	display: flex;
 	width: fit-content;
 	justify-content: center;
 	align-content: center;
 
-
 	padding: 1rem 0 1rem;
 	margin: auto;
 
+	/* Configuring the underline. */
 	&::before {
-		height: 5px;
+		background: white;
+		height: 4px;
 		bottom: 7px;
+	}
+}
+
+/* ?reg */
+
+/* Entry input handler */
+/* ¿reg */
+
+#entry-handler-container {
+	margin: auto;
+	display: flex;
+	gap: 1rem;
+
+	width: fit-content;
+	align-items: center;
+}
+
+/* Addsite button */
+/* ¿reg */
+#addsite-button-hb {
+	display: inline-block;
+
+	width: 3rem;
+	height: 2rem;
+	cursor: pointer;
+
+	border-radius: var(--soft-radius);
+
+	#addsite-button-bg {
+		position: relative;
+		display: inline-block;
+
+		width: 100%;
+		height: 100%;
+		border-radius: var(--soft-radius);
+
+		background: var(--clr-switch-off);
+
+		transition: 0.5s ease-out;
+
+		>#addsite-button-text {
+			font-size: 13px;
+			user-select: none;
+			display: block;
+			position: absolute;
+			width: fit-content;
+			height: fit-content;
+
+			inset: 0;
+
+			margin: auto;
+		}
+
+		&::before {
+			border-radius: var(--soft-radius);
+			transition: 1s ease-out;
+			z-index: -1;
+			content: "";
+			display: inline-block;
+			position: absolute;
+
+			width: 100%;
+			height: 100%;
+
+			inset: 0;
+			background: linear-gradient(45deg, var(--clr-hlhl-gradient));
+			opacity: 0;
+		}
+
+		&:hover::before {
+			opacity: 1;
+		}
+
+		&:hover {
+			background: rgba(0, 0, 0, 0);
+		}
+
+		&:active {
+			transform: translateY(5px);
+		}
+	}
+}
+
+/* The logic marker for the button. */
+#addsite-button-inv-button {
+	display: none;
+}
+
+/* ?reg */
+
+/* the input inside the entry-handler container. */
+#entry-name-input {
+	appearance: none;
+	position: relative;
+
+	width: 12rem;
+	height: 2rem;
+	padding-left: 0.5rem;
+
+	border: none;
+	background: var(--clr-placeholderbg);
+	color: white;
+
+	border-top-right-radius: var(--soft-radius);
+	border-top-left-radius: var(--soft-radius);
+
+	border-bottom: 2px solid var(--clr-placeholderbg-hover);
+	transition: 0.7s ease-out;
+
+	&:focus {
+		outline: none;
+		border-bottom: 2px solid var(--clr-placeholderbg);
 	}
 }
 
