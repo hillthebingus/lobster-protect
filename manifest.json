@@ -4,7 +4,7 @@
 	"name": "[EarlyAccess] Lobster Protect - Site blocker",
 	"short_name": "LProtect",
 	"description": "A free and Open-Source site blocker.",
-	"version": "0.0",
+	"version": "1.0",
 	"permissions": [
 		"storage",
 		"unlimitedStorage",
