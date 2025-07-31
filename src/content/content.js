@@ -65,7 +65,7 @@ async function main() {
 				action: E_Actions.NONE,
 				redirect: "www.minecraft.net",
 			},
-			whitelist: false,
+			whitelist: true,
 			debug: true,
 		},
 	});

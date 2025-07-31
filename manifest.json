@@ -12,9 +12,9 @@
 		"search"
 	],
 	"icons": {
-		"16": "resources/img/logo64.png",
-		"48": "resources/img/logo128.png",
-		"128": "resources/img/logo512.png"
+		"16": "src/resources/img/logo64.png",
+		"48": "src/resources/img/logo128.png",
+		"128": "src/resources/img/logo512.png"
 	},
 	"background": {
 		"service_worker": "src/service/service-worker.js",
@@ -26,11 +26,12 @@
 				"<all_urls>"
 			],
 			"js": [
-				"src/content/utils.js",
+				"src/utils/classes.js",
+				"src/utils/enums.js",
 				"src/content/content.js"
 			],
 			"run_at": "document_start"
 		}
 	],
-	"options_page": "page/index.html"
+	"options_page": "src/options_page/index.html"
 }

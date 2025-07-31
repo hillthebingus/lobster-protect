@@ -5,16 +5,16 @@ Once this list is completed, the project should be released.
 ## Settings page
 It desperately needs to be updated.
 - [ ] Include more settings
-- [ ] Connect it with the chrome.storage API
+- [x] Connect it with the chrome.storage API
 - [x] Modularize the CSS so it's more maintainable (Seriously, it sucks)
 - [ ] Clean up the settings page's source (worst code ever written)
-- [ ] Make it more pretty and responsive
+- [x] Make it more pretty and responsive
 
 ## Site Blocker
 Features of the site blocker.
-- [ ] Debug mode
-- [ ] Close browser on trigger
-- [ ] Redirection
+- [x] Debug mode
+- [x] Close browser on trigger
+- [x] Redirection
 - [ ] Trigger happy mode
 - [ ] Tolerance
 - [ ] Reminders
