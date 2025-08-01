@@ -12,8 +12,8 @@
 	/* brighter gradient */
 	--clr-hlhl-gradient: #cf5590, #5e61b8;
 	
-	--clr-switch-off: hsl(0, 0%, 10%);
-	--clr-switch-on: hsl(0, 0%, 70%);
+	--clr-switch-off: hsl(0, 0%, 13%);
+	--clr-switch-on: hsl(0, 0%, 90%);
 	--clr-button-off: hsl(0, 0%, 30%);
 	--clr-button-on: var(--clr-hl-gradient);
 	

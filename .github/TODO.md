@@ -1,6 +1,5 @@
 # Tasks
 Thingies i'm doing, or have done already.
-Once this list is completed, the project should be released.
 
 ## Settings page
 It desperately needs to be updated.

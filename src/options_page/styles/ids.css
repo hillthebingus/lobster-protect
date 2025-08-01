@@ -29,14 +29,14 @@
 
 /*?reg*/
 
-/* The toggles section */
+/* The globals section */
 /*¿reg*/
-#toggles-section {
+#globals-section {
 	width: 100%;
 	height: 100%;
 }
 
-#toggles-section-bg {
+#globals-section-bg {
 	position: relative;
 	background-color: var(--clr-divbg);
 
@@ -44,11 +44,7 @@
 	padding: 2rem;
 }
 
-#toggles-section-table td:first-child {
-	width: 100%;
-}
-
-#toggles-section-bg::before {
+#globals-section-bg::before {
 	content: "";
 	position: absolute;
 	display: inline-block;
@@ -59,7 +55,7 @@
 	z-index: 7;
 
 	width: 45%;
-	height: 5%;
+	height: 2%;
 
 	background: linear-gradient(45deg, var(--clr-hlhl-gradient));
 }
@@ -276,29 +272,5 @@
 
 /* ?reg */
 
-/* the input inside the entry-handler container. */
-#entry-name-input {
-	appearance: none;
-	position: relative;
-
-	width: 12rem;
-	height: 2rem;
-	padding-left: 0.5rem;
-
-	border: none;
-	background: var(--clr-placeholderbg);
-	color: white;
-
-	border-top-right-radius: var(--soft-radius);
-	border-top-left-radius: var(--soft-radius);
-
-	border-bottom: 2px solid var(--clr-placeholderbg-hover);
-	transition: 0.7s ease-out;
-
-	&:focus {
-		outline: none;
-		border-bottom: 2px solid var(--clr-placeholderbg);
-	}
-}
 
 /* ?reg */

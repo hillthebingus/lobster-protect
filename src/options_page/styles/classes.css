@@ -107,6 +107,7 @@
 	opacity: 1;
 	transform: scale(1.1, 1.1);
 }
+
 /*?reg*/
 
 /* Wrapper for the main content */
@@ -209,7 +210,7 @@
 	display: inline-block;
 
 	width: max-content;
-	max-width: 250px;
+	max-width: 16rem;
 	height: fit-content;
 
 	border-radius: var(--soft-radius);
@@ -218,7 +219,8 @@
 	left: 105%;
 	z-index: 10;
 
-	text-align: center;
+	text-align: left;
+	text-wrap-style: pretty;
 
 	background-color: var(--clr-tooltipbg);
 
@@ -484,3 +486,113 @@ body.preload * {
 }
 
 /*?reg*/
+
+/* Input fields */
+/* ¿reg */
+
+/* the input inside the entry-handler container. */
+.input-prompt {
+	appearance: none;
+	position: relative;
+
+	width: 12rem;
+	height: 2rem;
+	padding-left: 0.5rem;
+
+	border: none;
+	background: var(--clr-placeholderbg);
+	color: white;
+
+	border-top-right-radius: var(--soft-radius);
+	border-top-left-radius: var(--soft-radius);
+
+	border-bottom: 2px solid var(--clr-placeholderbg-hover);
+	transition: 0.7s ease-out;
+
+	&:focus {
+		outline: none;
+		border-bottom: 2px solid var(--clr-placeholderbg);
+	}
+}
+
+.select-prompt {
+	appearance: base-select;
+	position: relative;
+
+	width: 12rem;
+	height: 2rem;
+	padding-left: 1rem;
+	padding-top: .5rem;
+
+	border: none;
+	background: var(--clr-placeholderbg);
+	color: white;
+
+	border-top-right-radius: var(--soft-radius);
+	border-top-left-radius: var(--hard-radius);
+	border-bottom-right-radius: var(--hard-radius);
+
+	border-bottom: 2px solid var(--clr-placeholderbg-hover);
+	transition: 0.7s ease-out;
+
+	font-size: 13px;
+
+	&:focus {
+		outline: none;
+	}
+
+	&::picker-icon {
+		content: "-";
+	}
+
+	&::picker(select) {
+		color: white;
+	}
+}
+
+.small-prompt {
+	width: 9rem;
+}
+
+/* ?reg */
+
+/* Globals section... sections. */
+/* ¿reg */
+.globals-area-container {
+	display: grid;
+
+	grid-template-columns: 5fr 1fr;
+	gap: .7rem;
+	align-items: center;
+
+	border-radius: var(--soft-radius);
+
+	background: hsl(0, 0%, 7%);
+	margin-bottom: 2rem;
+	padding: 2rem;
+
+	&>*:not(.tooltip-container) {
+		justify-self: center;
+	}
+}
+
+.globals-area-title {
+	font-family: "Playfair Display", serif;
+	font-size: 40px;
+	font-weight: 700;
+
+	width: 100%;
+
+	grid-column: span 2;
+	padding-bottom: 1rem;
+
+	text-align: left;
+
+	&::before {
+		transform: translateY(-500%) translateX(100%);
+		width: 20%;
+		height: 5%;
+	}
+}
+
+/* ?reg */
