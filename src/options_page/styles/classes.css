@@ -120,7 +120,11 @@
 }
 
 .separate-top {
-	margin-top: 4rem;
+	margin-top: 1rem;
+}
+
+.separate-bottom {
+	margin-bottom: 1rem;
 }
 
 /*?reg*/
@@ -485,10 +489,20 @@ body.preload * {
 	display: none;
 }
 
+.temp-entry {
+	background: #7d4a20;
+}
+
 /*?reg*/
 
 /* Input fields */
 /* ¿reg */
+
+.bad-placeholder {
+	&::placeholder {
+		opacity: 0;
+	}
+}
 
 /* the input inside the entry-handler container. */
 .input-prompt {
@@ -596,3 +610,84 @@ body.preload * {
 }
 
 /* ?reg */
+
+/* Button */
+/* ¿reg */
+.button-hb {
+	display: inline-block;
+
+	width: 3rem;
+	height: 2rem;
+	cursor: pointer;
+
+	border-radius: var(--soft-radius);
+
+	.button-bg {
+		position: relative;
+		display: inline-block;
+
+		width: 100%;
+		height: 100%;
+		border-radius: var(--soft-radius);
+
+		background: var(--clr-switch-off);
+
+		transition: 0.5s ease-out;
+
+		>.button-text {
+			font-size: 15px;
+			user-select: none;
+			display: block;
+			position: absolute;
+			width: fit-content;
+			height: fit-content;
+
+			inset: 0;
+
+			margin: auto;
+		}
+
+		&::before {
+			border-radius: var(--soft-radius);
+			transition: 1s ease-out;
+			z-index: -1;
+			content: "";
+			display: inline-block;
+			position: absolute;
+
+			width: 100%;
+			height: 100%;
+
+			inset: 0;
+			background: linear-gradient(45deg, var(--clr-hlhl-gradient));
+			opacity: 0;
+		}
+
+		&:hover::before {
+			opacity: 1;
+		}
+
+		&:hover {
+			background: rgba(0, 0, 0, 0);
+		}
+
+		&:active {
+			transform: translateY(5px);
+		}
+	}
+}
+
+.save-button {
+	width: 8rem;
+	height: 3rem;
+
+	.button-text {
+		height: min-content;
+		transform: translateY(-15%);
+	}
+}
+
+/* The logic marker for the button. */
+.inv-button {
+	display: none;
+}
