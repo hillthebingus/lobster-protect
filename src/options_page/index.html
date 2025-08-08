@@ -45,8 +45,10 @@
 	<script src="../utils/classes.js"></script>
 	<script src="../utils/enums.js"></script>
 
-	<script src="settings.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/init.js"></script>
 
+	<!-- <script src="settings.js"></script> -->
 </head>
 
 <body class="preload">
@@ -104,8 +106,22 @@
 	These divs are all hidden and shown with javascript when the user clicks on the navbar, 
 	so we can display an animation when we change sections 
 	-->
-	<!--¿reg-->
+	<!--#####################################################-->
 	<div class="wrapper-center separate-top">
+
+		<!-- The SAVE button -->
+		<label class="button-hb save-button separate-bottom">
+			<span class="button-bg">
+				<span class="button-text">
+					<!-- icon -->
+					<span class="material-icons navbar-icon">
+						save
+					</span>
+					Save
+				</span>
+			</span>
+			<button id="save-button" class="inv-button"></button>
+		</label>
 
 		<div class="outer">
 			<!-- Site list section -->
@@ -119,16 +135,16 @@
 					<input type="text" class="input-prompt" placeholder="www.hostname.com" id="entry-name-input">
 
 					<!-- the button. -->
-					<label id="addsite-button-hb">
-						<span id="addsite-button-bg">
-							<span id="addsite-button-text">
+					<label class="button-hb">
+						<span class="button-bg">
+							<span class="button-text">
 								<!-- icon -->
 								<span class="material-icons">
 									add
 								</span>
 							</span>
 						</span>
-						<button id="addsite-button-inv-button"></button>
+						<button id="addsite-button-inv-button" class="inv-button"></button>
 					</label>
 				</div>
 
@@ -152,15 +168,15 @@
 
 					<!-- The placeholder buttons -->
 					<div id="presets-container">
-						<a href="#" class="preset-hitbox">
+						<a href="#" class="preset-hitbox" preset-name-id="Lobster">
 							<span class="preset-name">Lobster 🦞</span>
 						</a>
 
-						<a href="#" class="preset-hitbox">
+						<a href="#" class="preset-hitbox" preset-name-id="ResponsibleAdult">
 							<span class="preset-name">Responsible Adult 👷‍♂️</span>
 						</a>
 
-						<a href="#" class="preset-hitbox">
+						<a href="#" class="preset-hitbox" preset-name-id="NoNoSites">
 							<span class="preset-name">No-no sites ❌</span>
 						</a>
 					</div>
@@ -203,7 +219,7 @@
 						</div>
 
 						<!-- button -->
-						<input type="text" class="input-prompt small-prompt" placeholder="www.hostname.com">
+						<input type="text" class="input-prompt small-prompt" placeholder="www.hostname.com" id="redirect-url-input">
 
 					</div>
 
@@ -213,7 +229,7 @@
 						<!-- option -->
 						<div class="tooltip-container">
 							Whitelist mode
-							<span class="tooltip-text" >
+							<span class="tooltip-text">
 								Any site that <i>isn't</i> on the site list now triggers LobsterProtect.
 							</span>
 						</div>
@@ -252,7 +268,7 @@
 			Rest of the sections. 
 			-->
 	</div>
-	<!--?reg-->
+	<!--#######################################################-->
 
 
 
