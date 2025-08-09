@@ -223,12 +223,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	PageObj.Poi.Placeholder.presets.forEach((el) => {
 		el.addEventListener("click", function() {
-			PageObj.Data.known_hosts = new Set(JSON.parse(this.getAttribute("args")))
+			PageObj.Data.known_hosts = new Set(JSON.parse(this.getAttribute("sitelist")))
+			PageObj.Data.local_opts = JSON.parse(this.getAttribute("preset_opts"))
 
 			PageObj.Data.known_hosts.forEach((v) => {
 				newEntry(v, true)
 			})
+
 			PageObj.Poi.Placeholder.refresh(PageObj.Data.known_hosts.size)
+
+			PageObj.Poi.GlobalsSection.action_list.value = PageObj.Data.local_opts.on_trigger.action
+			PageObj.Poi.GlobalsSection.redirect_input.value = PageObj.Data.local_opts.on_trigger.redirect
+
+			PageObj.Poi.GlobalsSection.Toggles.whitelist.checked = PageObj.Data.local_opts.whitelist
+			PageObj.Poi.GlobalsSection.Toggles.debug.checked = PageObj.Data.local_opts.debug
+			PageObj.Poi.GlobalsSection.Toggles.trigger_happy.checked = PageObj.Data.local_opts.trigger_happy
 		})
 	})
 

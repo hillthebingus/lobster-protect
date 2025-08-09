@@ -151,25 +151,29 @@
 					<span id="placeholder-body">
 						It seems like you don't have any sites loaded... No worries! You can add some yourself using the input
 						above! —
-						Or use one of these sitelist presets!
+						Or using one of these presets to get you started!
 					</span>
 
 					<!-- The placeholder buttons -->
 					<div id="presets-container">
 						<label class="preset-hitbox">
 							<span class="preset-name">Lobster 🦞</span>
-							<input type="button" class="inv-button preset-button">
+							<input type="button" class="inv-button preset-button"
+								sitelist='["adfoc.us", "armortrims.com", "artfight.net", "aternos.org", "bloxorz.io", "curseforge.com", "discord.com", "garticphone.com", "jackbox.tv", "live.com", "mail.google.com", "mapmaking.fr", "minecraft.net", "nexusmods.com", "optifine.net", "planetminecraft.com", "skribbl.io", "spotify.com", "stardew.info", "stardewvalleywiki.com", "vanillatweaks.net"]'
+								preset_opts='{ "debug": false, "whitelist": true, "trigger_happy": true, "on_trigger": {"action": 2, "redirect": "www.biblegateway.com"} }'>
 						</label>
 
 						<label class="preset-hitbox">
 							<span class="preset-name">Responsible Adult 👷‍♂️</span>
 							<input type="button" class="inv-button preset-button"
-								args='["www.instagram.com", "www.tiktok.com", "www.facebook.com", "www.reddit.com", "old.reddit.com"]'>
+								sitelist='["www.instagram.com", "www.tiktok.com", "www.facebook.com", "www.reddit.com", "old.reddit.com"]'
+								preset_opts='{ "debug": false, "whitelist": false, "trigger_happy": false, "on_trigger": {"action": 2, "redirect": "www.github.com"} }'>
 						</label>
 
 						<label class="preset-hitbox">
 							<span class="preset-name">No-no sites ❌</span>
-							<input type="button" class="inv-button preset-button">
+							<input type="button" class="inv-button preset-button" sitelist='[]'
+								preset_opts='{ "debug": false, "whitelist": false, "trigger_happy": true, "on_trigger": {"action": 1, "redirect": ""} }'>
 						</label>
 					</div>
 				</div>
