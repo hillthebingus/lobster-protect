@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 				redirect: "",
 			},
 			whitelist: false,
+			trigger_happy: false,
 			debug: false,
 		},
 	});
@@ -65,6 +66,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// Getting the current site
 	const current_site = window.location.hostname;
 	Log(opts.debug, "main", "Current hostname:", current_site);
+	Log(opts.debug, "sitels.every", "Current sitelist: ", sitels)
+	Log(opts.debug, "sitels.every", "Current opts: ", opts)
 
 	let found_page = null;
 
@@ -72,7 +75,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	 * found_page either contains null or the SiteLSEntry that triggered LobsterProtect
 	 * */
 	if (sitels.every((v) => {
-		found_page = (v.hostname === current_site) ? v : null
+		if (opts.trigger_happy) {
+			found_page = (current_site.includes(v.hostname)) ? v : null
+		} else {
+			found_page = (v.hostname === current_site) ? v : null
+		}
 		return !(found_page)
 	})) {
 		// This handles whitelist.

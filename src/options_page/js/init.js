@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 		PageObj.Data.local_opts.whitelist = PageObj.Poi.GlobalsSection.Toggles.whitelist.checked
 		PageObj.Data.local_opts.debug = PageObj.Poi.GlobalsSection.Toggles.debug.checked
+		PageObj.Data.local_opts.trigger_happy = PageObj.Poi.GlobalsSection.Toggles.trigger_happy.checked
 
 		// onion.
 		PageObj.Data.local_opts.on_trigger.action = parseInt(PageObj.Poi.GlobalsSection.action_list.value)
@@ -225,5 +226,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	PageObj.Poi.GlobalsSection.Toggles.whitelist.checked = opts.whitelist
 	PageObj.Poi.GlobalsSection.Toggles.debug.checked = opts.debug
+	PageObj.Poi.GlobalsSection.Toggles.trigger_happy.checked = opts.trigger_happy
 
 })

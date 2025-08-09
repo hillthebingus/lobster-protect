@@ -56,6 +56,7 @@ class GlobalPageClass {
 				Toggles: {
 					whitelist: document.getElementById("whitelist-inv-checkbox"),
 					debug: document.getElementById("debug-inv-checkbox"),
+					trigger_happy: document.getElementById("th-inv-checkbox"),
 				}
 			},
 			// ?reg
@@ -77,7 +78,7 @@ class GlobalPageClass {
 				 * References to all presets in the placeholder.
 				 * @type {Array<HTMLElement>}
 				 * */
-				presets: Array.from(document.getElementsByClassName("preset-hitbox")),
+				presets: Array.from(document.getElementsByClassName("preset-button")),
 
 				/**
 				 * Handles the visibility of the placeholder based on the number of children the placeholder has.
@@ -118,6 +119,7 @@ class GlobalPageClass {
 			 * */
 			local_opts: {
 				whitelist: false,
+				trigger_happy: false,
 				debug: true,
 				on_trigger: {
 					action: E_Actions.REDIRECT,
