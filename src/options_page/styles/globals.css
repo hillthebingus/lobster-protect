@@ -24,6 +24,12 @@ div {
 	font-size: large;
 	color: whitesmoke;
 }
+
+a:visited,
+a {
+	color: #3a50a6;
+	text-decoration: none;
+}
 /*?reg*/
 
 /* Some things for the main page */
