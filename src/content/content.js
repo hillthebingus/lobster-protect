@@ -7,12 +7,12 @@ function Log(is_enabled, fn, ...msg) {
 // ?reg
 
 // Called only when LobsterProtect is triggered ¿reg
-function onTrigger(dbg, order, _override) {
+function onTrigger(dbg, on_trigger, _override) {
 	Log(dbg, "onTrigger", "Triggered.");
 
 
 	// Use the override if we have one.
-	const action = (_override === null) ? order.action : _override.action
+	const action = (_override === null) ? on_trigger.action : _override.action
 
 
 	switch (action) {
@@ -26,62 +26,60 @@ function onTrigger(dbg, order, _override) {
 			break;
 
 		case E_Actions.REDIRECT:
-			Log(dbg, "onTrigger::REDIRECT", "Redirecting to: ", order.redirect);
-			window.location.hostname = order.redirect;
+			Log(dbg, "onTrigger::REDIRECT", "Redirecting to: ", on_trigger.redirect);
+			window.location.hostname = on_trigger.redirect;
 			break;
 
 		case E_Actions.NONE:
 			Log(
 				true,
 				"onTrigger::NONE",
-				"I was triggered, but i was told to not do anything.",
+				"I was triggered, but i was told to not do anything. DEBUG",
 			);
+			break;
+		default:
+			alert(`-- LobsterProtect(content.js)::onTrigger()\n-> ERROR Unknown on_trigger.action |${action}|`)
 			break;
 	}
 }
 // ?reg
 
-// Entry point.
-async function main() {
+// Loading the entry point.
+// ¿reg
+document.addEventListener("DOMContentLoaded", async () => {
 	Log(true, "main", "Welcome to LobsterProtect!");
 
-	// Getting the response object
-	// TODO Once the options page is finished, remove the defaults.
-	const { sitels, opts } = await chrome.storage.local.get({
-		sitels: [
-			{
-				url: "www.youtube.com",
-				leniency: 0,
-				action_override: null
-			},
-			{
-				url: "www.google.com",
-				leniency: 0,
-				action_override: null
-			}
-		],
+	// Getting the responses
+	const { sitels, opts } = await chrome.storage.sync.get({
+		sitels: [],
 		opts: {
 			on_trigger: {
 				action: E_Actions.NONE,
-				redirect: "www.minecraft.net",
+				redirect: "",
 			},
-			whitelist: true,
-			debug: true,
+			whitelist: false,
+			debug: false,
 		},
 	});
 
 	// Getting the current site
 	const current_site = window.location.hostname;
-	Log(opts.debug, "main", "Found hostname:", current_site);
+	Log(opts.debug, "main", "Current hostname:", current_site);
 
-	// If we're on a site we shouldn't be in
-	sitels.forEach(e => {
-		// Unreadable magic, but it just checks our current site keeping in mind our whitelist.
-		if (e.url === current_site && opts.whitelist === false || e.url !== current_site && opts.whitelist === true) {
-			onTrigger(opts.debug, opts.on_trigger, e.action_override)
-		}
-	});
-}
+	let found_page = null;
 
-// Loading the entry point after content loads.
-document.addEventListener("DOMContentLoaded", main);
+	/* This mess is in charge of detecting if we're on a forbidden site... 
+	 * found_page either contains null or the SiteLSEntry that triggered LobsterProtect
+	 * */
+	if (sitels.every((v) => {
+		found_page = (v.hostname === current_site) ? v : null
+		return !(found_page)
+	})) {
+		// This handles whitelist.
+		// passing null as the override because we're not dealing with a SiteLSEntry object.
+		if (opts.whitelist) onTrigger(opts.debug, opts.on_trigger, null)
+		
+		// This handles blacklist. Weird syntax but ok.
+	} else if (!opts.whitelist) onTrigger(opts.debug, opts.on_trigger, found_page.action_override)
+});
+// ?reg
