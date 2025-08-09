@@ -63,6 +63,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const { sitels } = await chrome.storage.sync.get({
 		sitels: []
 	})
+	const { opts } = await chrome.storage.sync.get({
+		opts: {
+			whitelist: false,
+			debug: false,
+			on_trigger: {
+				action: E_Actions.NONE,
+				redirect: "www.google.com"
+			}
+		}
+	})
+
 
 	// Building the initial known_hosts
 	sitels.forEach((e) => {
@@ -71,5 +82,121 @@ document.addEventListener("DOMContentLoaded", async () => {
 	PageObj.Data.known_hosts.forEach((e) => {
 		newEntry(e, false)
 	})
+
+	// Refreshing the placeholder so it's shown appropriately
+	PageObj.Poi.Placeholder.refresh(PageObj.Data.known_hosts.size)
+
+	/*******
+	 * Handling the buttons and other inputs.
+	 * */
+	// addsite listener. ¿reg
+	PageObj.Poi.SiteList.add_button.addEventListener("click", () => {
+		// Be a big shot.
+		const name = PageObj.Poi.SiteList.input_name.value
+
+		// for illegal inputs... this junk is strait up ugly :sob
+		if (name.includes(" ") || name === "" || PageObj.Data.known_hosts.has(name)) {
+			PageObj.Poi.SiteList.input_name.style.background = "var(--clr-nono)"
+			PageObj.Poi.SiteList.input_name.style.color = "black"
+			PageObj.Poi.SiteList.input_name.classList.add("bad-placeholder")
+			return
+
+		} else {
+			PageObj.Poi.SiteList.input_name.style.background = "var(--clr-placeholderbg)"
+			PageObj.Poi.SiteList.input_name.style.color = "white"
+			PageObj.Poi.SiteList.input_name.value = ""
+			PageObj.Poi.SiteList.input_name.classList.remove("bad-placeholder")
+		}
+
+		// building it.
+		newEntry(name, true)
+		PageObj.Data.known_hosts.add(name)
+		PageObj.Poi.Placeholder.refresh(PageObj.Data.known_hosts.size)
+	})
+	// ?reg
+
+	/**
+	 * SAVE button listener.
+	 * */
+	// ¿reg
+	PageObj.Poi.save_button.addEventListener("click", async () => {
+		PageObj.Data.local_sitels = []
+		PageObj.Data.known_hosts.forEach((e) => {
+			PageObj.Data.local_sitels.push(new SiteLSEntry(e, 0, null))
+		})
+
+		console.log("local_sitels: ", PageObj.Data.local_sitels)
+
+
+
+		// Ironically a little harder to read...
+		// This can fail sometimes, maybe if there's js no elements.
+		try {
+			["entry-name", "entry-del-hb", "list-separator"] // All the classnames we're deleting.
+				.forEach((n) => {
+					Array.from(document.getElementsByClassName(n)).forEach((el) => {
+						el.remove() // Removing them.
+					})
+				})
+
+		} catch { }
+
+		PageObj.Data.local_opts.whitelist = PageObj.Poi.GlobalsSection.Toggles.whitelist.checked
+		PageObj.Data.local_opts.debug = PageObj.Poi.GlobalsSection.Toggles.debug.checked
+
+		// onion.
+		PageObj.Data.local_opts.on_trigger.action = parseInt(PageObj.Poi.GlobalsSection.action_list.value)
+		PageObj.Data.local_opts.on_trigger.redirect = PageObj.Poi.GlobalsSection.redirect_input.value
+
+		// Saving the data
+		await chrome.storage.sync.set({
+			sitels: PageObj.Data.local_sitels,
+			opts: PageObj.Data.local_opts
+		})
+		console.log("cloud_sitels: ", await chrome.storage.sync.get("sitels"))
+		console.log("cloud_opts: ", await chrome.storage.sync.get("opts"))
+
+
+		// rebuilding the sitelist.
+		PageObj.Data.known_hosts.forEach((e) => {
+			newEntry(e, false)
+		})
+	})
+	// ?reg
+
+
+	// It really wasn't worth it to Global this.
+	const nav_buttons = document.getElementsByClassName("navbar-inv-radio");
+
+	// Handles the switching tabs animation.
+	// ¿reg
+	Array.from(nav_buttons).forEach((el) => {
+		el.addEventListener("click", function() {
+			document.body.classList = "";
+			let _current_section = document.getElementsByClassName("content-show")[0];
+
+			// Keeps track of our current section.
+			_current_section.classList.remove("content-show");
+			_current_section.classList.add("content-hide");
+
+			// Handles the switch animation.
+			document
+				.getElementById(this.getAttribute("ref"))
+				.classList.add("content-show");
+			document
+				.getElementById(this.getAttribute("ref"))
+				.classList.remove("content-hide");
+		});
+	});
+	// ?reg
+
+	/*
+	 * Initial load of these toggles.
+	 * */
+	PageObj.Poi.GlobalsSection.action_list.value = opts.on_trigger.action
+	PageObj.Poi.GlobalsSection.redirect_input.value = opts.on_trigger.redirect
+
+	PageObj.Poi.GlobalsSection.Toggles.whitelist.checked = opts.whitelist
+	PageObj.Poi.GlobalsSection.Toggles.debug.checked = opts.debug
 
 })
