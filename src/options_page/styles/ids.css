@@ -140,9 +140,7 @@
 	}
 
 	span {
-		display: block;
-		margin: auto;
-		z-index: 3;
+		z-index: 5;
 		font-size: 0.8rem;
 	}
 }

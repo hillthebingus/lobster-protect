@@ -144,6 +144,8 @@
 	width: fit-content;
 	height: 4rem;
 
+	cursor: pointer;
+
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
@@ -214,16 +216,16 @@
 	display: inline-block;
 
 	width: max-content;
-	max-width: 16rem;
+	max-width: 32rem;
 	height: fit-content;
 
 	border-radius: var(--soft-radius);
 
-	padding: 0.5rem;
+	padding: .7rem;
 	left: 105%;
 	z-index: 10;
 
-	text-align: left;
+	text-align: center;
 	text-wrap-style: pretty;
 
 	background-color: var(--clr-tooltipbg);
@@ -460,7 +462,7 @@ body.preload * {
 
 	&::after {
 		content: '-';
-		color: black;
+		color: white;
 		font-size: 1rem;
 
 		position: absolute;
@@ -475,13 +477,14 @@ body.preload * {
 
 .list-separator:not(:last-child) {
 	display: block;
-	height: 3px;
-	width: 50%;
+	height: 4px;
+	width: 95%;
 	margin: auto;
 
 	background:
 		linear-gradient(45deg, var(--clr-hl-gradient));
 
+	filter: opacity(50%);
 	grid-column: span 2;
 }
 
