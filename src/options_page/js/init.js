@@ -10,6 +10,8 @@ function newEntry(entry_name, is_temp) {
 	n_entry_name.textContent = entry_name
 	if (is_temp) {
 		n_entry_name.classList = "entry-name temp-entry " + entry_name
+		document.getElementById("stay-clean").classList.add("shine-when-dirty")
+		PageObj.Data.is_dirty = true
 	} else {
 		n_entry_name.classList = "entry-name " + entry_name
 	}
@@ -17,7 +19,7 @@ function newEntry(entry_name, is_temp) {
 
 	// The delete option, later the flexbox with the other options TODO
 	const options_label = document.createElement("label")
-	options_label.classList = "entry-del-hb " + entry_name
+	options_label.classList = "entry-del-hb dirty " + entry_name
 
 	// The bg of the button.
 	const options_bg = document.createElement("span")
@@ -88,6 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	/*******
 	 * Handling the buttons and other inputs.
+	 * Adding the listeners.
 	 * */
 	// addsite listener. ¿reg
 	PageObj.Poi.SiteList.add_button.addEventListener("click", () => {
@@ -165,7 +168,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// ?reg
 
 
-	// It really wasn't worth it to Global this.
+	// It really wasn't worth it to Global this, you could make the same case for the save-button, but whatever.
 	const nav_buttons = document.getElementsByClassName("navbar-inv-radio");
 
 	// Handles the switching tabs animation.
@@ -188,6 +191,30 @@ document.addEventListener("DOMContentLoaded", async () => {
 				.classList.remove("content-hide");
 		});
 	});
+	// ?reg
+
+	// Handles the dirtying of the page's state. To prevent people from quitting without saving on accident.
+	//¿reg
+	Array.from(document.getElementsByClassName("dirty")).forEach((el) => {
+		el.addEventListener("click", () => {
+			document.getElementById("stay-clean").classList.add("shine-when-dirty")
+			PageObj.Data.is_dirty = true
+		})
+	})
+
+	Array.from(document.getElementsByClassName("clean")).forEach((el) => {
+		el.addEventListener("click", () => {
+			document.getElementById("stay-clean").classList.remove("shine-when-dirty")
+			PageObj.Data.is_dirty = false
+		})
+	})
+
+	window.addEventListener("beforeunload", (win) => {
+		if (PageObj.Data.is_dirty) {
+			win.preventDefault()
+			win.returnValue = ""
+		}
+	})
 	// ?reg
 
 	/*

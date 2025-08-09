@@ -124,6 +124,11 @@ class GlobalPageClass {
 					redirect: "www.google.com"
 				}
 			},
+			/**
+			 * Dirty simply means if we have unsaved changes.
+			 * @type {boolean}
+			 * */
+			is_dirty: false
 		}
 		// ?reg
 	}

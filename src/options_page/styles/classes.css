@@ -632,7 +632,7 @@ body.preload * {
 
 		background: var(--clr-switch-off);
 
-		transition: 0.5s ease-out;
+		transition: all 0.5s ease-out;
 
 		>.button-text {
 			font-size: 15px;
@@ -690,4 +690,18 @@ body.preload * {
 /* The logic marker for the button. */
 .inv-button {
 	display: none;
+}
+
+.shine-when-dirty:not(:hover) {
+	animation-name: dirty-shine-kf;
+	animation-duration: 1s !important;
+	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes dirty-shine-kf {
+	50% {
+		background: #7d4a20;
+	}
 }

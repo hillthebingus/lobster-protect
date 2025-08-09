@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 	<title>LobsterProtect | Settings</title>
 
 	<!-- Preconnecting to google fonts -->
@@ -47,8 +47,6 @@
 
 	<script src="js/main.js"></script>
 	<script src="js/init.js"></script>
-
-	<!-- <script src="settings.js"></script> -->
 </head>
 
 <body class="preload">
@@ -110,8 +108,8 @@
 	<div class="wrapper-center separate-top">
 
 		<!-- The SAVE button -->
-		<label class="button-hb save-button separate-bottom">
-			<span class="button-bg">
+		<label class="button-hb save-button separate-bottom clean">
+			<span class="button-bg" id="stay-clean">
 				<span class="button-text">
 					<!-- icon -->
 					<span class="material-icons navbar-icon">
@@ -203,7 +201,7 @@
 						</div>
 
 						<!-- button -->
-						<select class="select-prompt" id="action-select">
+						<select class="select-prompt dirty" id="action-select">
 							<option value="1">Close the browser.</option>
 							<option value="2">Redirect to another site.</option>
 						</select>
@@ -219,7 +217,7 @@
 						</div>
 
 						<!-- button -->
-						<input type="text" class="input-prompt small-prompt" placeholder="www.hostname.com" id="redirect-url-input">
+						<input type="text" class="input-prompt small-prompt dirty" placeholder="www.hostname.com" id="redirect-url-input">
 
 					</div>
 
@@ -235,7 +233,7 @@
 						</div>
 
 						<!-- button -->
-						<label class="switch-container">
+						<label class="switch-container dirty">
 							<input type="checkbox" class="inv-checkbox" id="whitelist-inv-checkbox">
 							<span class="switch-bg"></span>
 							<span class="switch-border"></span>
@@ -252,7 +250,7 @@
 						</div>
 
 						<!-- button -->
-						<label class="switch-container">
+						<label class="switch-container dirty">
 							<input type="checkbox" class="inv-checkbox" id="debug-inv-checkbox">
 							<span class="switch-bg"></span>
 							<span class="switch-border"></span>
