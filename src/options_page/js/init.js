@@ -168,12 +168,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	})
 	// ?reg
 
-
+	// Handles the switching tabs animation.
+	// ¿reg
 	// It really wasn't worth it to Global this, you could make the same case for the save-button, but whatever.
 	const nav_buttons = document.getElementsByClassName("navbar-inv-radio");
 
-	// Handles the switching tabs animation.
-	// ¿reg
 	Array.from(nav_buttons).forEach((el) => {
 		el.addEventListener("click", function() {
 			document.body.classList = "";
