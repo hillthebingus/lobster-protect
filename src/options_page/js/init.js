@@ -37,6 +37,10 @@ function newEntry(entry_name, is_temp) {
 			e.remove()
 		})
 
+		n_entry_name.classList = "entry-name temp-entry " + entry_name
+		document.getElementById("stay-clean").classList.add("shine-when-dirty")
+		PageObj.Data.is_dirty = true
+
 		PageObj.Data.known_hosts.delete(del_ref)
 		console.log(PageObj.Data.known_hosts)
 		PageObj.Poi.Placeholder.refresh(PageObj.Data.known_hosts.size)
@@ -216,6 +220,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 		}
 	})
 	// ?reg
+
+	PageObj.Poi.Placeholder.presets.forEach((el) => {
+		el.addEventListener("click", function() {
+			PageObj.Data.known_hosts = new Set(JSON.parse(this.getAttribute("args")))
+
+			PageObj.Data.known_hosts.forEach((v) => {
+				newEntry(v, true)
+			})
+			PageObj.Poi.Placeholder.refresh(PageObj.Data.known_hosts.size)
+		})
+	})
 
 	/*
 	 * Initial load of these toggles.
