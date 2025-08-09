@@ -36,6 +36,8 @@ function newEntry(entry_name, is_temp) {
 		})
 
 		PageObj.Data.known_hosts.delete(del_ref)
+		console.log(PageObj.Data.known_hosts)
+		PageObj.Poi.Placeholder.refresh(PageObj.Data.known_hosts.size)
 	})
 
 	// Composing the custom button. from the above.
@@ -59,26 +61,13 @@ function newEntry(entry_name, is_temp) {
 document.addEventListener("DOMContentLoaded", async () => {
 
 	const { sitels } = await chrome.storage.sync.get({
-		sitels: [
-			{
-				hostname: "Hellow"
-			},
-			{
-				hostname:"thisshouldbepermanent."
-			},
-			{
-				hostname:"Anythingafterthisshouldbetemporaryuntilwerebuildit."
-			},
-		]
+		sitels: []
 	})
 
 	// Building the initial known_hosts
-	sitels.forEach(e => {
-		// Making known the hosts in the storage.
+	sitels.forEach((e) => {
 		PageObj.Data.known_hosts.add(e.hostname)
 	});
-
-	// Manually adding our known hosts into the sitelist..
 	PageObj.Data.known_hosts.forEach((e) => {
 		newEntry(e, false)
 	})
