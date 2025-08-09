@@ -40,7 +40,7 @@ function rebuildTable(site_container, sitelist, input) {
 	}
 
 	// Ironically a little harder to read...
-	["entry-name", "entry-del-hb", "entry-del-bg", "entry-del-inv-button", "list-separator"] // All the classnames we're deleting.
+	["entry-name", "entry-del-hb", "list-separator"] // All the classnames we're deleting.
 		.forEach((n) => {
 			Array.from(document.getElementsByClassName(n)).forEach((el) => {
 				el.remove() // Removing them.

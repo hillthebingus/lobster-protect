@@ -158,7 +158,7 @@
 	grid-template-columns: 4fr 1fr;
 	background: hsl(from var(--clr-placeholderbg) h s calc(l * 0.7));
 
-	border: 2px solid var(--clr-placeholderbg-hover);
+	/* border: 2px solid var(--clr-placeholderbg-hover); */
 	border-radius: var(--soft-radius);
 
 	margin: 2rem;
