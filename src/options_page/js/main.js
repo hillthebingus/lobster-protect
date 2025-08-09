@@ -7,6 +7,7 @@ class GlobalPageClass {
 		 * */
 		// Poi ¿reg
 		this.Poi = {
+			save_button: document.getElementById("save-button"),
 			/**
 			 * POI related to the sitelist
 			 * */
@@ -83,9 +84,10 @@ class GlobalPageClass {
 				 * @param n {Number}
 				 * */
 				refresh(n) {
-					// Simply updates the display based on n
+					// Updates the display based on n
 					console.log("Handling placeholder visibility. n is: ", n)
-					this._ref.style.display = (n > 2) ? "grid" : "none"
+					this._ref.style.display = (n <= 0) ? "grid" : "none"
+					document.getElementById("sitelist-container").style.display = (n > 0) ? "grid" : "none"
 				},
 			},
 			// ?reg
