@@ -99,13 +99,33 @@ class GlobalPageClass {
 		 * Contains things related to the site itself.
 		 * Most of this is temporary, it's just in order to avoid calling chrome.storage over and over.
 		 * */
+		// Data ¿reg
 		this.Data = {
 			/**
 			 * Temporary storage for the hosts we already know, whether they've been added, or synced.
 			 * @type {Set<string>}
 			 * */
 			known_hosts: new Set([]),
+
+			/**
+			 * Temporary storage for the local sitelist.
+			 * @type {Array<SiteLSEntry>}
+			 * */
+			local_sitels: [],
+
+			/**
+			 * Temporary storage for the options.
+			 * */
+			local_opts: {
+				whitelist: false,
+				debug: true,
+				on_trigger: {
+					action: E_Actions.REDIRECT,
+					redirect: "www.google.com"
+				}
+			},
 		}
+		// ?reg
 	}
 }
 
@@ -118,16 +138,11 @@ class GlobalPageClass {
 var PageObj;
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
 	/**
 	 * @type {GlobalPageClass}
 	 * */
 	PageObj = new GlobalPageClass()
-
-	// Doing this on load, so in later files we don't need to worry about it.
-	PageObj.Poi.Placeholder.refresh(PageObj.Data.known_hosts.length)
 })
 
 
