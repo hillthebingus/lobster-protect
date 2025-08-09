@@ -45,6 +45,7 @@
 }
 
 #globals-section-bg::before {
+
 	content: "";
 	position: absolute;
 	display: inline-block;
@@ -95,6 +96,31 @@
 }
 
 /*?reg*/
+
+/*About section*/
+#about-section {
+	width: 100%;
+	height: fit-content;
+
+}
+
+#about-section-bg {
+	border-radius: var(--soft-radius);
+	background: var(--clr-divbg);
+	padding: 1rem;
+}
+
+#about-title {
+	font-weight: 400;
+	font-size: 2rem;
+
+	&::before {
+		width: 50%;
+		left: 50%;
+		transform: translateX(-100%);
+	}
+}
+
 
 /* Placeholder grid */
 /* ¿reg */
@@ -199,4 +225,3 @@
 
 
 /* ?reg */
-

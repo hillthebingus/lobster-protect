@@ -719,3 +719,22 @@ body.preload * {
 		background: #7d4a20;
 	}
 }
+
+/* ?reg */
+
+.about-text {
+	font-size: 1rem;
+	font-family: "Jost", sans-serif;
+}
+
+.bigger {
+	font-size: 2rem;
+}
+
+.area-container {
+	border-radius: var(--soft-radius);
+
+	background: hsl(0, 0%, 7%);
+	margin-bottom: 2rem;
+	padding: 2rem;
+}
