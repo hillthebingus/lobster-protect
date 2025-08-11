@@ -13,15 +13,23 @@ function onTrigger(dbg, on_trigger, _override) {
 
 	// Use the override if we have one.
 	const action = (_override === null) ? on_trigger.action : _override.action
+	Log(dbg, "onTrigger", "Connecting to service worker...");
+	const _orders = chrome.runtime.connect({ name: "orders" });
 
 
 	switch (action) {
 		case E_Actions.CLOSE_WINDOW:
-			Log(dbg, "onTrigger::CLOSE_WINDOW", "Connecting to service worker...");
-			const _orders = chrome.runtime.connect({ name: "orders" });
 			_orders.postMessage({
 				author: chrome.runtime.id,
 				action: "CLOSE_WINDOW",
+			});
+			break;
+
+		case E_Actions.CLOSE_TAB:
+			Log(dbg, "onTrigger::CLOSE_TAB", "Closing tab...");
+			_orders.postMessage({
+				author: chrome.runtime.id,
+				action: "CLOSE_TAB",
 			});
 			break;
 
@@ -29,6 +37,7 @@ function onTrigger(dbg, on_trigger, _override) {
 			Log(dbg, "onTrigger::REDIRECT", "Redirecting to: ", on_trigger.redirect);
 			window.location.hostname = on_trigger.redirect;
 			break;
+
 
 		case E_Actions.NONE:
 			Log(
@@ -85,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 		// This handles whitelist.
 		// passing null as the override because we're not dealing with a SiteLSEntry object.
 		if (opts.whitelist) onTrigger(opts.debug, opts.on_trigger, null)
-		
+
 		// This handles blacklist. Weird syntax but ok.
 	} else if (!opts.whitelist) onTrigger(opts.debug, opts.on_trigger, found_page.action_override)
 });

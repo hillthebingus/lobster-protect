@@ -22,10 +22,15 @@ function ordersHandler(order) {
 	switch (order.action) {
 		case "CLOSE_WINDOW":
 			// Getting the current window and deleting it.
-			console.log(order.action)
 			chrome.windows.getCurrent({}).then((win) => {
 				chrome.windows.remove(win.id);
 			});
+			break;
+		case "CLOSE_TAB":
+			// Getting the current tab and deleting it.
+			chrome.tabs.query({active: true, lastFocusedWindow: true}).then((tabs) => {
+				chrome.tabs.remove(tabs[0].id)
+			})
 			break;
 	}
 }
