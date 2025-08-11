@@ -5,7 +5,10 @@
  * */
 //¿reg
 async function handleSuccess(skip) {
-	await chrome.storage.local.set({ skipped_registration: skip })
+	await chrome.storage.local.set({ 
+		skipped_registration: skip,
+		session_is_valid: true,
+	})
 	window.location.pathname = "src/options_page/main.html"
 }
 // ?reg
@@ -41,7 +44,7 @@ async function setupLoginCallbacks() {
 
 		console.log("pass: ", hashed_passwd, "ipt:", hashed_input)
 		if (hashed_input === hashed_passwd.password) {
-			window.location.pathname = "src/options_page/main.html"
+			handleSuccess(false)
 		}
 	})
 }

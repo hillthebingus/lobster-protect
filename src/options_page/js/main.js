@@ -123,7 +123,7 @@ class GlobalPageClass {
 				debug: true,
 				on_trigger: {
 					action: E_Actions.REDIRECT,
-					redirect: "www.google.com"
+					redirect: ""
 				}
 			},
 			/**

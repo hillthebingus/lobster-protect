@@ -74,25 +74,40 @@ document.addEventListener("DOMContentLoaded", async () => {
 			whitelist: false,
 			debug: false,
 			on_trigger: {
-				action: E_Actions.NONE,
-				redirect: "www.google.com"
+				action: E_Actions.REDIRECT,
+				redirect: ""
 			}
 		}
 	})
-	const { skipped_registration } = await chrome.storage.local.get({ skipped_registration: true })
+
+	/*
+	 * Handles validation of the session.
+	 * */
+	// ¿reg
+	const { skipped_registration, session_is_valid } = await chrome.storage.local.get({
+		skipped_registration: true,
+		session_is_valid: false,
+	})
 	if (!skipped_registration) {
 		document.getElementById("register-button").style.display = "none"
-	} else {
+	}
+	else {
 		document.getElementById("register-button").addEventListener("click", () => {
 			window.location.pathname = "src/options_page/register.html"
+			return
 		})
 	}
-
+	if (!session_is_valid) {
+		alert("ERROR: Could not validate this dashboard access. Sending you to the Login page.")
+		window.location.pathname = "src/options_page/login.html"
+	}
+	// ?reg
 
 	// Building the initial known_hosts
 	sitels.forEach((e) => {
 		PageObj.Data.known_hosts.add(e.hostname)
 	});
+	// Building the sitelist
 	PageObj.Data.known_hosts.forEach((e) => {
 		newEntry(e, false)
 	})
@@ -106,7 +121,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	 * */
 	// addsite listener. ¿reg
 	PageObj.Poi.SiteList.add_button.addEventListener("click", () => {
-		// Be a big shot.
 		const name = PageObj.Poi.SiteList.input_name.value
 
 		// for illegal inputs... this junk is strait up ugly :sob
@@ -221,14 +235,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 		})
 	})
 
-	window.addEventListener("beforeunload", (win) => {
+	window.addEventListener("beforeunload", async (win) => {
 		if (PageObj.Data.is_dirty) {
 			win.preventDefault()
 			win.returnValue = ""
+		} else {
+			await chrome.storage.local.set({
+				session_is_valid: false
+			})
 		}
 	})
 	// ?reg
 
+	/* Loading the presets: */
+	// ¿reg
 	PageObj.Poi.Placeholder.presets.forEach((el) => {
 		el.addEventListener("click", function() {
 			PageObj.Data.known_hosts = new Set(JSON.parse(this.getAttribute("sitelist")))
@@ -240,7 +260,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 			PageObj.Poi.Placeholder.refresh(PageObj.Data.known_hosts.size)
 
-			PageObj.Poi.GlobalsSection.action_list.value = PageObj.Data.local_opts.on_trigger.action
+			PageObj.Poi.GlobalsSection.action_list.value = parseInt(PageObj.Data.local_opts.on_trigger.action)
 			PageObj.Poi.GlobalsSection.redirect_input.value = PageObj.Data.local_opts.on_trigger.redirect
 
 			PageObj.Poi.GlobalsSection.Toggles.whitelist.checked = PageObj.Data.local_opts.whitelist
@@ -248,11 +268,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 			PageObj.Poi.GlobalsSection.Toggles.trigger_happy.checked = PageObj.Data.local_opts.trigger_happy
 		})
 	})
+	// ?reg
 
 	/*
 	 * Initial load of these toggles.
 	 * */
-	PageObj.Poi.GlobalsSection.action_list.value = opts.on_trigger.action
+	PageObj.Poi.GlobalsSection.action_list.value = parseInt(opts.on_trigger.action)
 	PageObj.Poi.GlobalsSection.redirect_input.value = opts.on_trigger.redirect
 
 	PageObj.Poi.GlobalsSection.Toggles.whitelist.checked = opts.whitelist
