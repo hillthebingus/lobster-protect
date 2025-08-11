@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 		})
 	}
 
-	// Insane
-	if (!session_is_valid) {
+	// To prevent people from just entering the dashboard by typing the right uri
+	if (!session_is_valid && !skipped_registration) {
 		alert("ERROR: Could not validate this dashboard access. Sending you to the Login page. If you're seeing this aftter reloading the page, this is expected behavior.")
 		window.location.pathname = "src/options_page/login.html"
 	}
