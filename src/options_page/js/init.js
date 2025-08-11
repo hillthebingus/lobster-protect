@@ -88,6 +88,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 		skipped_registration: true,
 		session_is_valid: false,
 	})
+
+	// Toggling the Register button depending on whether we skipped it or not.
 	if (!skipped_registration) {
 		document.getElementById("register-button").style.display = "none"
 	}
@@ -97,8 +99,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 			return
 		})
 	}
+
+	// Insane
 	if (!session_is_valid) {
-		alert("ERROR: Could not validate this dashboard access. Sending you to the Login page.")
+		alert("ERROR: Could not validate this dashboard access. Sending you to the Login page. If you're seeing this aftter reloading the page, this is expected behavior.")
 		window.location.pathname = "src/options_page/login.html"
 	}
 	// ?reg
