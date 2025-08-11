@@ -33,5 +33,5 @@
 			"run_at": "document_start"
 		}
 	],
-	"options_page": "src/options_page/login.html"
+	"options_page": "src/options_page/redirect.html"
 }
