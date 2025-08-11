@@ -5,7 +5,7 @@
  * */
 //¿reg
 async function handleSuccess(skip) {
-	await chrome.storage.local.set({ 
+	await chrome.storage.local.set({
 		skipped_registration: skip,
 		session_is_valid: true,
 	})

@@ -33,5 +33,8 @@
 			"run_at": "document_start"
 		}
 	],
-	"options_page": "src/options_page/redirect.html"
+	"options_page": "src/options_page/redirect.html",
+	"action": {
+		"default_popup": "src/options_page/popup.html"
+	}
 }
