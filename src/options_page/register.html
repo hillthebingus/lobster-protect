@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Register | LobsterProtect</title>
+
+
+	<!-- fonts -->
+	<!-- ¿reg -->
+	<!-- Playfair -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+		rel="stylesheet">
+
+	<!-- Jost -->
+	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+
+	<!-- Roboto Flex -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+		rel="stylesheet">
+	<!-- ?reg -->
+
+	<link rel="stylesheet" href="styles/vars.css">
+	<link rel="stylesheet" href="styles/login.css">
+
+	<script src="js/security.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<section class="box title-area">
+			<h2 class="grad-underline title" id="welcome-message">Welcome to LobsterProtect!</h2>
+		</section>
+
+		<section class="box text-area">
+			<h3 class="grad-underline title title-separation">Please read...</h3>
+			<p>
+				If you're going to register your dashboard, keep in mind the following:<br><br>
+				<span class="important">These credentials are local to your machine, which means you won't be able to change
+					them later since LobsterProtect can't really validate your identity. So make sure to make them
+					memorable.</span>
+			</p>
+		</section>
+
+		<div class="box input-container">
+			<h3 class="grad-underline title title-separation">Your Credentials</h3>
+
+			<label class="text-input-hb">
+				<span class="text-input-label">Username</span>
+				<input class="text-input-text" type="text" name="username" placeholder=" ">
+			</label>
+
+			<label class="text-input-hb">
+				<span class="text-input-label">Password</span>
+				<input class="text-input-text" type="password" name="password" placeholder=" ">
+			</label>
+
+			<label for="reveal-pass" class="important">
+				<input type="checkbox" id="reveal-pass">
+				Show password
+			</label>
+
+			<label for="agreement" id="agreement-container">
+				<input type="checkbox" name="agreement" id="agreement-checkbox">
+				<span id="agreement-text">
+					I understand i cannot change these credentials unless i reinstall LobsterProtect as a whole; As such, i
+					take
+					full responsibility over whether i remember them or not. Furthermore, I
+					acknowledge i'm the most awesome person on the planet.
+				</span>
+			</label>
+
+			<label class="button-hb">
+				<span class="button-label">Register</span>
+				<input type="button" class="button-inv-button" id="register-button">
+			</label>
+
+			<label class="button-hb dull">
+				<span class="button-label">Skip registering</span>
+				<input type="button" class="button-inv-button" id="no-register-button">
+			</label>
+		</div>
+	</div>
+</body>
+
+</html>
