@@ -155,6 +155,7 @@ html {
 	}
 
 	>.text-input-text {
+		transition: 1s;
 		appearance: none;
 		border: none;
 		border-bottom: solid 2px var(--clr-placeholderbg-hover);

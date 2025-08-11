@@ -45,6 +45,10 @@ async function setupLoginCallbacks() {
 		console.log("pass: ", hashed_passwd, "ipt:", hashed_input)
 		if (hashed_input === hashed_passwd.password) {
 			handleSuccess(false)
+		} else {
+			document.getElementsByName("password")[0].style.borderBottom = "solid 2px var(--clr-nono)"
+			alert("Incorrect password.")
+			return
 		}
 	})
 }
@@ -64,9 +68,24 @@ async function setupRegistrationCallbacks() {
 		// oh my gosh guys deltarune reference no way
 		// the javascriptgrave route:
 		// this was totally unintentional btw
-		const can_proceed = document.getElementsByName("username")[0].value && document.getElementById("agreement-checkbox").checked && document.getElementsByName("password")[0].value
-		if (!can_proceed) {
-			alert("You are missing some fields!")
+		let proceed = document.getElementsByName("username")[0]
+		if (!proceed.value) {
+			alert("You are missing your username!")
+			proceed.style.borderBottom = "solid 2px var(--clr-nono)"
+			return
+		}
+
+		proceed = document.getElementsByName("password")[0]
+		if (!proceed.value) {
+			alert("You are missing your password!")
+			proceed.style.borderBottom = "solid 2px var(--clr-nono)"
+			return
+		}
+
+		proceed = document.getElementById("agreement-checkbox")
+		if (!proceed.checked) {
+			alert("You are missing your password!")
+			proceed.style.outline = "solid 2px var(--clr-nono)"
 			return
 		}
 
