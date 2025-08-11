@@ -84,7 +84,7 @@ async function setupRegistrationCallbacks() {
 
 		proceed = document.getElementById("agreement-checkbox")
 		if (!proceed.checked) {
-			alert("You are missing your password!")
+			alert("You need to check the agreement.")
 			proceed.style.outline = "solid 2px var(--clr-nono)"
 			return
 		}
