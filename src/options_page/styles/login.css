@@ -115,6 +115,10 @@ html {
 	width: fit-content;
 }
 
+.welcome-login {
+	padding: 1.2rem;
+}
+
 #welcome-message:not(.normal-wrap) {
 	width: min-content;
 }
