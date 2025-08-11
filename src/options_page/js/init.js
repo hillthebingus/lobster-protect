@@ -79,6 +79,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 			}
 		}
 	})
+	const { skipped_registration } = await chrome.storage.local.get({ skipped_registration: true })
+	if (!skipped_registration) {
+		document.getElementById("register-button").style.display = "none"
+	} else {
+		document.getElementById("register-button").addEventListener("click", () => {
+			window.location.pathname = "src/options_page/register.html"
+		})
+	}
 
 
 	// Building the initial known_hosts

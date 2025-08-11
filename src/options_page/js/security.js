@@ -4,9 +4,9 @@
  * @param {Boolean} skip Whether we skipped registration or not.
  * */
 //¿reg
-function handleSuccess(skip) {
+async function handleSuccess(skip) {
+	await chrome.storage.local.set({ skipped_registration: skip })
 	window.location.pathname = "src/options_page/main.html"
-	chrome.storage.local.set({ skipped_registration: skip })
 }
 // ?reg
 
