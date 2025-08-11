@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json.schemastore.org/chrome-manifest",
 	"manifest_version": 3,
-	"name": "[EarlyAccess] Lobster Protect - Site blocker",
+	"name": "Lobster Protect - Site blocker",
 	"short_name": "LProtect",
 	"description": "A free and Open-Source site blocker.",
 	"version": "1.0",
@@ -33,5 +33,5 @@
 			"run_at": "document_start"
 		}
 	],
-	"options_page": "src/options_page/index.html"
+	"options_page": "src/options_page/login.html"
 }
