@@ -29,6 +29,7 @@ function ordersHandler(order) {
 		case "CLOSE_TAB":
 			// Getting the current tab and deleting it.
 			chrome.tabs.query({active: true, lastFocusedWindow: true}).then((tabs) => {
+				console.log("Tabs object: ", tabs)
 				chrome.tabs.remove(tabs[0].id)
 			})
 			break;
