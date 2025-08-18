@@ -1,0 +1,12 @@
+# @format
+
+useTabs: true
+tabWidth: 4
+insertPragma: true
+checkIgnorePragma: true
+
+overrides:
+  - files: "*.html"
+    options:
+      parser: "html"
+      tabWidth: 2

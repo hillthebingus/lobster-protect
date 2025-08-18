@@ -1,9 +1,10 @@
-<div style="text-align: center;">
-	<img src="../src/resources/img/logo128.png">
-</div>
+![LobsterProtect Logo](../src/resources/img/logo128.png)
+
+[![Static Badge](https://img.shields.io/badge/License-gray)](LICENSE.txt) [![Static Badge](https://img.shields.io/badge/Chrome%20Web%20Store-Latest-green?style=flat&labelColor=blue)](LICENSE.txt)
 
 # 🦞Lobster Protect
-The Free, Open Source, and silly site blocker
+
+The Free, Open Source, and silly site blocker.
 
 ## Table of contents
 <!-- no toc -->
@@ -36,7 +37,7 @@ Do note however, not all updates will be pushed to the Chrome Web Store version 
 
 So if an update is "small and meaningless enough" then it won't be implemented in the Chrome Web Store version until an update that *isn't small and meaningless* is released.
 
-#### What isn't small and meaningless?
+#### What _**doesn't**_ qualify as small and meaningless?
 - Major bugfixes 
   - In regards to the actual site blocker functionality. E.g. Some sites not being blocked or unexpected false positives.
   - Any issues that were flagged as "High priority".
@@ -51,16 +52,21 @@ So if an update is "small and meaningless enough" then it won't be implemented i
 
 2. ### From this very repository
 
-Alternatively, you can "build from source" by cloning this repository somewhere in your system, and loading it unpacked in your supported browser. For a tutorial on how to do this, check out this video:
+Alternatively, you can "build from source" by cloning this repository somewhere in your system, and loading it unpacked in your supported browser. For a tutorial on how to do this, read the following:
 
-<video controls src="resources/loadUnpackedTutorial.mp4" title="Load Unpacked Tutorial"></video>
+* Clone this repository somewhere, using:
+```bash
+git clone https://github.com/hillthebingus/lobster-protect.git
+```
+
+* Then go to your browser, go to Extensions > Manage your extensions, turn on "Developer mode" and "Load Unpacked".
+
+* A menu should pop-up, find the `lobster-protect` folder in your system, wherever you cloned it.
 
 # Future plans
 
 This is more of an informative section that aims to answer questions before they're asked.
 
-- ### Why so few features?
-    - v1.0 was released in this state because most of the upcoming features will likely not be used by most people, and since a lot of those features are still a WIP, i didn't want to delay the release over features that people (probably) won't use or care about. But there is more features coming!
 - ### When will this come to firefox/safari/any_browser_im_forgetting?
 	- Probably soon! I can't say for sure when, but what i *can* say for sure is that v1.0 will not be ported to other browsers. There's plenty of features i haven't implemented into the base extension yet, so i still need to test them before i can even *consider* porting the project.
 	- I really don't want to worry about portability more than maintainability, so until the codebase is in a state i'm more comfortable with, it will not come to any other browsers.
@@ -167,7 +173,7 @@ If you're doing something with the *intent* of helping the project, you're contr
 Here's some basic guidelines:
 
 - ### For ALL Contributions
-Please read the [Code of Conduct](), it's not a long read and it'd help me maintain the project and the sanity of everyone else that wishes to contribute.
+Please read the [Code of Conduct](CODE_OF_CONDUCT.md), it's not a long read and it'd help me maintain the project and the sanity of everyone else that wishes to contribute.
 
 - ### For Source Code Contributions
 Make sure you read [CONTRIBUTING.md](CONTRIBUTING.md), you'll find all the useful information there, such as what is the formatting tool standard and how to write your commit messages.

@@ -1,0 +1,31 @@
+extends:
+  - '@commitlint/config-conventional'
+
+rules:
+  header-max-length: [1, "always", 72]
+  subject-case: [2, "always", "sentence-case"]
+  subject-full-stop: [1, "always", "."]
+  type-enum:
+  - 2
+  - always
+  - - core
+    - ui
+    - feat
+    - fix
+    - docs
+    - style
+    - refactor
+    - perf
+    - revert
+
+help: |
+  **Possible types**:
+  `core`:             Changes to the core of LobsterProtect, the actual Site Blocker functionality (content scripts, service worker, etc.)
+  `ui`:               Changes to the UI, such as the options page or popup.
+  `feat`:             Adds a new feature.
+  `fix`:              Solves a bug.
+  `docs`:             Adds or alters documentation or anything github-scope related.
+  `style`:            Improves formatting.
+  `refactor`:         Rewrites code without feature, performance or bug changes.
+  `perf`:             Improves performance.
+  `revert`:           Changes that revert other changes.
