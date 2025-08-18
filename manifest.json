@@ -3,13 +3,12 @@
 	"manifest_version": 3,
 	"name": "Lobster Protect - Site blocker",
 	"short_name": "LProtect",
-	"description": "A free and Open-Source site blocker.",
+	"description": "The free and Open-Source site blocker.",
 	"version": "1.0",
 	"permissions": [
 		"storage",
 		"unlimitedStorage",
-		"tabs",
-		"search"
+		"tabs"
 	],
 	"icons": {
 		"16": "src/resources/img/logo64.png",
