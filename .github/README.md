@@ -63,6 +63,8 @@ git clone https://github.com/hillthebingus/lobster-protect.git
 
 * A menu should pop-up, find the `lobster-protect` folder in your system, wherever you cloned it.
 
+* After you've selected it, you should have LobsterProtect installed! Happy safe browsing ❣️🦞.
+
 # Future plans
 
 This is more of an informative section that aims to answer questions before they're asked.
@@ -82,6 +84,7 @@ However, this isn't implemented yet so calling this section "Globals" is a littl
 
 ### Trigger options
 ![trigger options image](resources/triggerOptions.png)
+
 Here's where you tell LobsterProtect what to do when it detects you are in a forbidden site.
 
 #### `Action`
