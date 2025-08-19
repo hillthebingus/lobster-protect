@@ -66,10 +66,10 @@ function newEntry(entry_name, is_temp) {
  * */
 document.addEventListener("DOMContentLoaded", async () => {
 
-	const { sitels } = await chrome.storage.sync.get({
+	const { sitels } = await chrome.storage.local.get({
 		sitels: []
 	})
-	const { opts } = await chrome.storage.sync.get({
+	const { opts } = await chrome.storage.local.get({
 		opts: {
 			whitelist: false,
 			debug: false,
@@ -183,12 +183,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 		PageObj.Data.local_opts.on_trigger.redirect = PageObj.Poi.GlobalsSection.redirect_input.value
 
 		// Saving the data
-		await chrome.storage.sync.set({
+		await chrome.storage.local.set({
 			sitels: PageObj.Data.local_sitels,
 			opts: PageObj.Data.local_opts
 		})
-		console.log("cloud_sitels: ", await chrome.storage.sync.get("sitels"))
-		console.log("cloud_opts: ", await chrome.storage.sync.get("opts"))
+		console.log("cloud_sitels: ", await chrome.storage.local.get("sitels"))
+		console.log("cloud_opts: ", await chrome.storage.local.get("opts"))
 
 
 		// rebuilding the sitelist.

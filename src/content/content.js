@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	Log(true, "main", "Welcome to LobsterProtect!");
 
 	// Getting the responses
-	const { sitels, opts } = await chrome.storage.sync.get({
+	const { sitels, opts } = await chrome.storage.local.get({
 		sitels: [],
 		opts: {
 			on_trigger: {
